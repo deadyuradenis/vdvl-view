@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="ru" data-color-theme="default">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="assets/media/favicon.svg" type="image/svg+xml">
+<style type="text/css">
+  .preloader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: #fff;
+    -webkit-transition: opacity 0.5s ease;
+    -o-transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
+  }
+
+  .preloader__logo {
+    position: relative;
+    -webkit-transition: opacity 0.6s ease, transform 0.6s ease;
+    -o-transition: opacity 0.6s ease, transform 0.6s ease;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    opacity: 1;
+    width: 163px;
+    height: 40px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+  .preloader__mask {
+    content: "";
+    display: block;
+    position: absolute;
+    inset: 0 0 0 auto;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: width 0.4s ease;
+    -o-transition: width 0.4s ease;
+    transition: width 0.4s ease;
+    background-color: #fff;
+  }
+
+  .preloader.is-loaded {
+    pointer-events: none;
+    opacity: 0;
+    -webkit-transition-delay: 0.4s;
+    -o-transition-delay: 0.4s;
+    transition-delay: 0.4s;
+  }
+
+  .preloader.is-loaded .preloader__logo {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+</style>
+<link rel="stylesheet" href="css/index.css">
+<script src="https://api-maps.yandex.ru/2.1/?apikey=e9d4279c-2ad3-4577-a66e-d27b17ee133c&amp;lang=ru_RU"></script>
+<title>UI KIT</title>
+
+<body class="layout">
+  <header class="header" data-component="header">
+    <div class="header-top header__top">
+      <div class="container">
+        <div class="header-top__content"> <a class="header-top__fast" href="#"><span>Быстрый расчет сметы</span></a>
+          <div class="header-top__contacts"> <a class="link link--theme-white header-top__link" href="tel: +7 (812) 602-92-15"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                <use xlink:href="assets/icons/clean/sprite.svg#phone"></use>
+              </svg><span>+7 (812) 602-92-15</span></a><a class="link link--theme-white header-top__link header-top__link--mail" href="mailto: info@vdvl.ru"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                <use xlink:href="assets/icons/clean/sprite.svg#mail"></use>
+              </svg><span>info@vdvl.ru</span></a><button class="link link--theme-white header-top__order" type="button" data-bs-toggle="modal" data-bs-target="#modal-callback">Заказать звонок</button></div>
+          <div class="header-top__caption">Работаем только с юридическими лицами!</div>
+        </div>
+      </div>
+    </div>
+    <div class="header-main header__main">
+      <div class="container">
+        <div class="header-main__content"><a class="header-main__logo" href="index.html"><img src="assets/media/logos/main.png" alt="" /></a>
+          <div class="header-main__caption">Рукава, запорная арматура и быстроразъемные соединения</div>
+          <div class="header-main__main">
+            <nav class="header-main__nav" data-component="header-nav">
+              <ul>
+                <li> <a href="catalog.html">Каталог</a></li>
+                <li> <a href="delivery.html">Доставка</a></li>
+                <li> <a href="faq.html">Информация</a></li>
+                <li> <a href="about.html">О компании</a></li>
+                <li> <a href="contacts.html">Контакты</a></li>
+              </ul>
+            </nav><a class="header-main__cart" href="cart.html"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                <use xlink:href="assets/icons/clean/sprite.svg#cart"></use>
+              </svg></a>
+            <div class="header-search header-main__search"> <button class="header-search__trigger" type="button" data-header-search="trigger"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                  <use xlink:href="assets/icons/clean/sprite.svg#search"></use>
+                </svg></button></div><button class="header-main__nav-trigger" type="button" data-header-nav="trigger"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                <use xlink:href="assets/icons/clean/sprite.svg#menu"></use>
+              </svg><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                <use xlink:href="assets/icons/clean/sprite.svg#close"></use>
+              </svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-nav" data-header-nav="dropdown">
+      <div class="container">
+        <ul class="header-nav__list-wrapper" data-component="drag-scroll">
+          <ul class="header-nav__list" data-header-nav="dropdown-list" data-drag-scroll="content"></ul>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <div class="layout__main">
+    <style type="text/css">
+      .ui {
+        min-height: 100vh;
+        flex-grow: 1;
+        display: flex;
+        justify-content: space-between;
+        background-color: var(--color-neutral-100);
+        background-repeat: repeat;
+        background-size: 820px auto;
+        color: var(--color-neutral-900);
+      }
+
+      @media only screen and (max-width: 833px) {
+        .ui {
+          flex-direction: column;
+        }
+      }
+
+      .ui__aside {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        order: 1;
+        z-index: 10;
+        width: 260px;
+        flex-shrink: 0;
+        margin-left: 20px;
+        max-height: calc(100% - var(--header-height));
+        border-left: 2px solid var(--color-neutral-300);
+      }
+
+      @media only screen and (max-width: 1023px) {
+        .ui__aside {
+          width: 220px;
+        }
+      }
+
+      @media only screen and (max-width: 833px) {
+        .ui__aside {
+          order: -1;
+          width: 100%;
+          padding: 8px 16px;
+          margin-left: 0;
+          position: sticky;
+          top: 0;
+          background-color: var(--color-neutral-50);
+          border-left: 0;
+          border-bottom: 2px solid var(--color-neutral-300);
+        }
+      }
+
+      .ui__nav {
+        position: sticky;
+        top: var(--header-height);
+        display: flex;
+        flex-direction: column;
+        padding: 16px 8px;
+        row-gap: 8px;
+        height: calc(100vh - var(--header-height));
+        overflow: hidden scroll;
+        text-transform: capitalize;
+        direction: rtl;
+      }
+
+      @media only screen and (max-width: 833px) {
+        .ui__nav {
+          position: static;
+          flex-direction: row;
+          flex-wrap: wrap;
+          padding: 0;
+          height: 68px;
+          gap: 4px;
+          direction: ltr;
+        }
+      }
+
+      .ui__body {
+        padding: 32px 20px;
+        width: 100%;
+        max-width: calc(100% - 260px);
+        flex-grow: 1;
+      }
+
+      @media only screen and (max-width: 1023px) {
+        .ui__body {
+          max-width: calc(100% - 220px);
+        }
+      }
+
+      @media only screen and (max-width: 833px) {
+        .ui__body {
+          padding: 24px 16px;
+          max-width: none;
+        }
+      }
+
+      .ui__inner {
+        padding: 0 16px;
+      }
+
+      .ui__header {
+        margin-bottom: 30px;
+      }
+
+      .ui__block {
+        border-bottom: 1px solid var(--color-neutral-400);
+      }
+
+      .ui__block:first-of-type {
+        margin-top: 0;
+      }
+
+      .ui__block::before {
+        content: "";
+        pointer-events: none;
+        display: block;
+        height: var(--header-height);
+        margin-top: calc(-1 * var(--header-height));
+        flex-shrink: 0;
+        display: flex;
+      }
+
+      @media only screen and (max-width: 833px) {
+        .ui__block::before {
+          height: 85px;
+          margin-top: -85px;
+        }
+      }
+
+      .ui__row {
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        gap: 32px 20px;
+        margin: 24px 0;
+      }
+
+      @media only screen and (max-width: 1023px) {
+        .ui__row {
+          margin: 20px 0;
+          gap: 24px 16px;
+        }
+      }
+
+      @media only screen and (max-width: 833px) {
+        .ui__row {
+          margin: 16px 0;
+          gap: 20px 16px;
+        }
+      }
+
+      .ui__col {
+        position: relative;
+        flex: 1 0 calc(20% - 16px);
+        max-width: 100%;
+        flex-grow: 1;
+        box-sizing: border-box;
+      }
+
+      @media only screen and (max-width: 1259px) {
+        .ui__col {
+          flex-basis: calc(33.33% - 13.3333333333px);
+        }
+      }
+
+      @media only screen and (max-width: 1023px) {
+        .ui__col {
+          flex-basis: calc(33% - 12px);
+        }
+      }
+
+      @media only screen and (max-width: 575px) {
+        .ui__col {
+          flex-basis: calc(50% - 8px);
+        }
+      }
+    </style>
+    <section class="ui">
+      <div class="ui__aside">
+        <div class="ui__nav"></div>
+      </div>
+      <div class="ui__body">
+        <div class="ui__header">
+          <h1 class="h1">UI KIT</h1>
+        </div>
+        <div class="ui__inner">
+          <div class="ui__block" id="ui-typography">
+            <div class="ui__row">
+              <div class="ui__col">
+                <div class="h2">Title</div>
+              </div>
+            </div>
+            <div class="ui__row">
+              <div class="ui__col">
+                <div class="h1">h1</div>
+              </div>
+              <div class="ui__col">
+                <div class="h2">h2</div>
+              </div>
+              <div class="ui__col">
+                <div class="h3">h3</div>
+              </div>
+              <div class="ui__col">
+                <div class="h4">h4</div>
+              </div>
+              <div class="ui__col">
+                <div class="h5">h5</div>
+              </div>
+            </div>
+          </div>
+          <div class="ui__block">
+            <div class="ui__row">
+              <div class="ui__col">
+                <div class="h2">Text</div>
+              </div>
+            </div>
+            <div class="ui__row">
+              <div class="ui__col">
+                <div class="text">text</div>
+              </div>
+              <div class="ui__col">
+                <div class="text-xl">text-xl</div>
+              </div>
+              <div class="ui__col">
+                <div class="text-lg">text-lg</div>
+              </div>
+              <div class="ui__col">
+                <div class="text-md">text-md</div>
+              </div>
+              <div class="ui__col">
+                <div class="text-sm">text-sm</div>
+              </div>
+            </div>
+          </div>
+          <div class="ui__block">
+            <div class="ui__row">
+              <div class="ui__col">
+                <div class="h2">List</div>
+              </div>
+            </div>
+            <div class="ui__row">
+              <div class="ui__col">
+                <ul class="list">
+                  <li class="list__item">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae soluta cum asperiores deserunt atque culpa quo, neque, ad blanditiis quos quod. Deserunt nulla natus tempore ducimus provident laborum exercitationem.</p>
+                  </li>
+                  <li class="list__item">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae soluta cum asperiores deserunt atque culpa quo, neque, ad blanditiis quos quod. Deserunt nulla natus tempore ducimus provident laborum exercitationem.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae soluta cum asperiores deserunt atque culpa quo, neque, ad blanditiis quos quod. Deserunt nulla natus tempore ducimus provident laborum exercitationem.</p>
+                  </li>
+                  <li class="list__item">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae soluta cum asperiores deserunt atque culpa quo, neque, ad blanditiis quos quod. Deserunt nulla natus tempore ducimus provident laborum exercitationem.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae soluta cum asperiores deserunt atque culpa quo, neque, ad blanditiis quos quod. Deserunt nulla natus tempore ducimus provident laborum exercitationem.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae soluta cum asperiores deserunt atque culpa quo, neque, ad blanditiis quos quod. Deserunt nulla natus tempore ducimus provident laborum exercitationem.</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="ui__col">
+                <ol class="list">
+                  <li class="list__item">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae soluta cum asperiores deserunt atque culpa quo, neque, ad blanditiis quos quod. Deserunt nulla natus tempore ducimus provident laborum exercitationem.</p>
+                  </li>
+                  <li class="list__item">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae soluta cum asperiores deserunt atque culpa quo, neque, ad blanditiis quos quod. Deserunt nulla natus tempore ducimus provident laborum exercitationem.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae soluta cum asperiores deserunt atque culpa quo, neque, ad blanditiis quos quod. Deserunt nulla natus tempore ducimus provident laborum exercitationem.</p>
+                  </li>
+                  <li class="list__item">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae soluta cum asperiores deserunt atque culpa quo, neque, ad blanditiis quos quod. Deserunt nulla natus tempore ducimus provident laborum exercitationem.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae soluta cum asperiores deserunt atque culpa quo, neque, ad blanditiis quos quod. Deserunt nulla natus tempore ducimus provident laborum exercitationem.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae soluta cum asperiores deserunt atque culpa quo, neque, ad blanditiis quos quod. Deserunt nulla natus tempore ducimus provident laborum exercitationem.</p>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div class="ui__block" id="ui-link">
+            <div class="ui__row">
+              <div class="ui__col">
+                <div class="h2">Link</div>
+              </div>
+            </div>
+            <div class="ui__row">
+              <div class="ui__col"><a class="link" href="#"><span>link</span></a></div>
+              <div class="ui__col"><a class="link" href="#"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                    <use xlink:href="assets/icons/clean/sprite.svg#open-in-new"></use>
+                  </svg><span>link</span></a></div>
+              <div class="ui__col"><a class="link" href="#"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                    <use xlink:href="assets/icons/clean/sprite.svg#open-in-new"></use>
+                  </svg><span>link</span><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                    <use xlink:href="assets/icons/clean/sprite.svg#open-in-new"></use>
+                  </svg></a></div>
+            </div>
+          </div>
+          <div class="ui__block" id="ui-button">
+            <div class="ui__row">
+              <div class="ui__col">
+                <div class="h3">Button</div>
+              </div>
+            </div>
+            <div class="ui__row">
+              <div class="ui__col">
+                <div class="h4">Button sizes</div>
+              </div>
+            </div>
+            <div class="ui__row">
+              <div class="ui__col"><button class="button button--size-" type="button"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                    <use xlink:href="assets/icons/clean/sprite.svg#arrow--left"></use>
+                  </svg><span>Button </span><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                    <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
+                  </svg></button></div>
+              <div class="ui__col"><button class="button button--size-lg" type="button"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                    <use xlink:href="assets/icons/clean/sprite.svg#arrow--left"></use>
+                  </svg><span>Button lg</span><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                    <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
+                  </svg></button></div>
+              <div class="ui__col"><button class="button button--size-md" type="button"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                    <use xlink:href="assets/icons/clean/sprite.svg#arrow--left"></use>
+                  </svg><span>Button md</span><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                    <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
+                  </svg></button></div>
+              <div class="ui__col"><button class="button button--size-sm" type="button"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                    <use xlink:href="assets/icons/clean/sprite.svg#arrow--left"></use>
+                  </svg><span>Button sm</span><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                    <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
+                  </svg></button></div>
+            </div>
+            <div class="ui__row">
+              <div class="ui__col">
+                <div class="h4">Button types</div>
+              </div>
+            </div>
+            <div class="ui__row">
+              <div class="ui__col"><button class="button button--type-icon button--size-" type="button"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                    <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
+                  </svg></button></div>
+              <div class="ui__col"><button class="button button--type-icon button--size-lg" type="button"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                    <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
+                  </svg></button></div>
+              <div class="ui__col"><button class="button button--type-icon button--size-md" type="button"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                    <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
+                  </svg></button></div>
+              <div class="ui__col"><button class="button button--type-icon button--size-sm" type="button"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                    <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
+                  </svg></button></div>
+            </div>
+            <div class="ui__row">
+              <div class="ui__col">
+                <div class="h4">Button themes</div>
+              </div>
+            </div>
+            <div class="ui__row">
+              <div class="ui__col"><button class="button button--theme-" type="button"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                    <use xlink:href="assets/icons/clean/sprite.svg#arrow--left"></use>
+                  </svg><span>Button </span><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                    <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
+                  </svg></button></div>
+              <div class="ui__col"><button class="button button--theme-primary" type="button"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                    <use xlink:href="assets/icons/clean/sprite.svg#arrow--left"></use>
+                  </svg><span>Button primary</span><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                    <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
+                  </svg></button></div>
+              <div class="ui__col"><button class="button button--theme-secondary" type="button"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                    <use xlink:href="assets/icons/clean/sprite.svg#arrow--left"></use>
+                  </svg><span>Button secondary</span><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                    <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
+                  </svg></button></div>
+              <div class="ui__col"><button class="button button--theme-gray" type="button"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                    <use xlink:href="assets/icons/clean/sprite.svg#arrow--left"></use>
+                  </svg><span>Button gray</span><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                    <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
+                  </svg></button></div>
+              <div class="ui__col"><button class="button button--theme-success" type="button"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                    <use xlink:href="assets/icons/clean/sprite.svg#arrow--left"></use>
+                  </svg><span>Button success</span><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                    <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
+                  </svg></button></div>
+            </div>
+            <div class="ui__row">
+              <div class="ui__col">
+                <div class="h4">Button disabled</div>
+              </div>
+            </div>
+            <div class="ui__row">
+              <div class="ui__col"><button class="button button--style-" type="button" disabled><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                    <use xlink:href="assets/icons/clean/sprite.svg#arrow--left"></use>
+                  </svg><span>Button </span><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                    <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
+                  </svg></button></div>
+            </div>
+          </div>
+          <div class="ui__block" id="ui-input">
+            <div class="ui__row">
+              <div class="ui__col">
+                <div class="h3">Input</div>
+              </div>
+            </div>
+            <div class="ui__row">
+              <div class="ui__col">
+                <div class="h4">Input sizes</div>
+              </div>
+            </div>
+            <div class="ui__row">
+              <div class="ui__col">
+                <div class="input input--type-text" data-component="input">
+                  <div class="input__title">size </div><label class="input__wrapper"><!-- Маски указываюстя в data-mask, варианты: number, letters, phone, mail, phone-email--><input class="input__native" type="text" name="input" data-input="native"></input><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                      <use xlink:href="assets/icons/clean/sprite.svg#search"></use>
+                    </svg></label><span class="input__message">Обязательно для заполнения</span>
+                </div>
+              </div>
+            </div>
+            <div class="ui__row">
+              <div class="ui__col">
+                <div class="h4">Input mask</div>
+              </div>
+            </div>
+            <div class="ui__row">
+              <div class="ui__col">
+                <div class="input input--type-text" data-component="input">
+                  <div class="input__title">mask: false</div><label class="input__wrapper"><!-- Маски указываюстя в data-mask, варианты: number, letters, phone, mail, phone-email--><input class="input__native" type="text" name="input" data-input="native" data-required="data-required"></input><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                      <use xlink:href="assets/icons/clean/sprite.svg#search"></use>
+                    </svg></label><span class="input__message">Обязательно для заполнения</span>
+                </div>
+              </div>
+              <div class="ui__col">
+                <div class="input input--type-text" data-component="input">
+                  <div class="input__title">mask: letters</div><label class="input__wrapper"><!-- Маски указываюстя в data-mask, варианты: number, letters, phone, mail, phone-email--><input class="input__native" type="text" name="input" data-input="native" data-mask="letters" data-required="data-required"></input><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                      <use xlink:href="assets/icons/clean/sprite.svg#search"></use>
+                    </svg></label><span class="input__message">Обязательно для заполнения</span>
+                </div>
+              </div>
+              <div class="ui__col">
+                <div class="input input--type-text" data-component="input">
+                  <div class="input__title">mask: number</div><label class="input__wrapper"><!-- Маски указываюстя в data-mask, варианты: number, letters, phone, mail, phone-email--><input class="input__native" type="text" name="input" data-input="native" data-mask="number" data-required="data-required"></input><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                      <use xlink:href="assets/icons/clean/sprite.svg#search"></use>
+                    </svg></label><span class="input__message">Обязательно для заполнения</span>
+                </div>
+              </div>
+              <div class="ui__col">
+                <div class="input input--type-text" data-component="input">
+                  <div class="input__title">mask: phone</div><label class="input__wrapper"><!-- Маски указываюстя в data-mask, варианты: number, letters, phone, mail, phone-email--><input class="input__native" type="text" name="input" data-input="native" data-mask="phone" data-required="data-required"></input><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                      <use xlink:href="assets/icons/clean/sprite.svg#search"></use>
+                    </svg></label><span class="input__message">Обязательно для заполнения</span>
+                </div>
+              </div>
+              <div class="ui__col">
+                <div class="input input--type-text" data-component="input">
+                  <div class="input__title">mask: mail</div><label class="input__wrapper"><!-- Маски указываюстя в data-mask, варианты: number, letters, phone, mail, phone-email--><input class="input__native" type="text" name="input" data-input="native" data-mask="mail" data-required="data-required"></input><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                      <use xlink:href="assets/icons/clean/sprite.svg#search"></use>
+                    </svg></label><span class="input__message">Обязательно для заполнения</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ui__block" id="ui-counter">
+            <div class="ui__row">
+              <div class="ui__col">
+                <div class="h3">Counter</div>
+              </div>
+            </div>
+            <div class="ui__row">
+              <div class="ui__col">
+                <div class="counter counter--size-lg" data-component="counter"><!-- При добавлении или убавлении берется текущее значение дата-аттрибута data-step, не может быть меньше текущего значения data-min и data-max--><input class="counter__input" type="text" name="counter" value="0" data-counter="input" data-min="0" data-max="1000" data-step="1" />
+                  <div class="counter__main"> <button class="button button--theme-gray button--type-icon counter__action" type="button" data-counter-action="minus"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                        <use xlink:href="assets/icons/clean/sprite.svg#minus"></use>
+                      </svg></button>
+                    <div class="counter__result"> <span data-counter="result">0</span><span>шт</span></div><button class="button button--theme-gray button--type-icon counter__action" type="button" data-counter-action="plus"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                        <use xlink:href="assets/icons/clean/sprite.svg#plus"></use>
+                      </svg></button>
+                  </div>
+                </div>
+              </div>
+              <div class="ui__col">
+                <div class="counter counter--size-md" data-component="counter"><!-- При добавлении или убавлении берется текущее значение дата-аттрибута data-step, не может быть меньше текущего значения data-min и data-max--><input class="counter__input" type="text" name="counter" value="0" data-counter="input" data-min="0" data-max="1000" data-step="1" />
+                  <div class="counter__main"> <button class="button button--theme-gray button--type-icon counter__action" type="button" data-counter-action="minus"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                        <use xlink:href="assets/icons/clean/sprite.svg#minus"></use>
+                      </svg></button>
+                    <div class="counter__result"> <span data-counter="result">0</span><span>шт</span></div><button class="button button--theme-gray button--type-icon counter__action" type="button" data-counter-action="plus"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                        <use xlink:href="assets/icons/clean/sprite.svg#plus"></use>
+                      </svg></button>
+                  </div>
+                </div>
+              </div>
+              <div class="ui__col">
+                <div class="counter counter--size-rg" data-component="counter"><!-- При добавлении или убавлении берется текущее значение дата-аттрибута data-step, не может быть меньше текущего значения data-min и data-max--><input class="counter__input" type="text" name="counter" value="0" data-counter="input" data-min="0" data-max="1000" data-step="1" />
+                  <div class="counter__main"> <button class="button button--theme-gray button--type-icon counter__action" type="button" data-counter-action="minus"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                        <use xlink:href="assets/icons/clean/sprite.svg#minus"></use>
+                      </svg></button>
+                    <div class="counter__result"> <span data-counter="result">0</span><span>шт</span></div><button class="button button--theme-gray button--type-icon counter__action" type="button" data-counter-action="plus"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                        <use xlink:href="assets/icons/clean/sprite.svg#plus"></use>
+                      </svg></button>
+                  </div>
+                </div>
+              </div>
+              <div class="ui__col">
+                <div class="counter counter--size-sm" data-component="counter"><!-- При добавлении или убавлении берется текущее значение дата-аттрибута data-step, не может быть меньше текущего значения data-min и data-max--><input class="counter__input" type="text" name="counter" value="0" data-counter="input" data-min="0" data-max="1000" data-step="1" />
+                  <div class="counter__main"> <button class="button button--theme-gray button--type-icon counter__action" type="button" data-counter-action="minus"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                        <use xlink:href="assets/icons/clean/sprite.svg#minus"></use>
+                      </svg></button>
+                    <div class="counter__result"> <span data-counter="result">0</span><span>шт</span></div><button class="button button--theme-gray button--type-icon counter__action" type="button" data-counter-action="plus"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                        <use xlink:href="assets/icons/clean/sprite.svg#plus"></use>
+                      </svg></button>
+                  </div>
+                </div>
+              </div>
+              <div class="ui__col">
+                <div class="counter counter--size-xs" data-component="counter" disabled="disabled"><!-- При добавлении или убавлении берется текущее значение дата-аттрибута data-step, не может быть меньше текущего значения data-min и data-max--><input class="counter__input" type="text" name="counter" value="0" data-counter="input" data-min="0" data-max="1000" data-step="1" />
+                  <div class="counter__main"> <button class="button button--theme-gray button--type-icon counter__action" type="button" data-counter-action="minus"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                        <use xlink:href="assets/icons/clean/sprite.svg#minus"></use>
+                      </svg></button>
+                    <div class="counter__result"> <span data-counter="result">0</span><span>шт</span></div><button class="button button--theme-gray button--type-icon counter__action" type="button" data-counter-action="plus"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                        <use xlink:href="assets/icons/clean/sprite.svg#plus"></use>
+                      </svg></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ui__block" id="ui-modal">
+            <div class="ui__row">
+              <div class="ui__col">
+                <div class="h3">Modal</div>
+              </div>
+            </div>
+            <div class="ui__row">
+              <div class="ui__col"><button class="button" type="button" data-bs-toggle="modal" data-bs-target="#modal-callback"><span>Modal "callback"</span></button></div>
+            </div>
+          </div>
+          <div class="ui__block" id="ui-section">
+            <div class="ui__row">
+              <div class="ui__col">
+                <div class="h3">Section</div>
+              </div>
+            </div>
+            <div class="ui__row">
+              <section class="section section--size-">
+                <div class="container section__container">
+                  <div class="section__header section__header--size-">
+                    <div class="section__header-content">
+                      <h2 class="section__title">Section size </h2>
+                      <p class="section__subtitle">Section subtitle</p>
+                    </div>
+                    <div class="section__header-actions"><a class="link section__link" href="#"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                          <use xlink:href="assets/icons/clean/sprite.svg#download"></use>
+                        </svg><span>Cкачать каталог</span></a></div>
+                  </div>
+                  <div class="section__body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, dolorum ducimus fuga fugiat iusto quod sunt. A cum illum in ipsa molestiae quaerat, qui quibusdam quo sequi tempore vel, voluptatibus.</p>
+                  </div>
+                  <div class="section__footer section__footer--size-">
+                    <div class="section__actions"><button class="button button--theme-secondary" type="button"><span>Показать еще</span></button></div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div class="ui__row">
+              <section class="section section--size-lg">
+                <div class="container section__container">
+                  <div class="section__header section__header--size-lg">
+                    <div class="section__header-content">
+                      <h2 class="section__title">Section size lg</h2>
+                      <p class="section__subtitle">Section subtitle</p>
+                    </div>
+                    <div class="section__header-actions"><a class="link section__link" href="#"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                          <use xlink:href="assets/icons/clean/sprite.svg#download"></use>
+                        </svg><span>Cкачать каталог</span></a></div>
+                  </div>
+                  <div class="section__body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, dolorum ducimus fuga fugiat iusto quod sunt. A cum illum in ipsa molestiae quaerat, qui quibusdam quo sequi tempore vel, voluptatibus.</p>
+                  </div>
+                  <div class="section__footer section__footer--size-lg">
+                    <div class="section__actions"><button class="button button--theme-secondary" type="button"><span>Показать еще</span></button></div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div class="ui__row">
+              <section class="section section--size-md">
+                <div class="container section__container">
+                  <div class="section__header section__header--size-md">
+                    <div class="section__header-content">
+                      <h2 class="section__title">Section size md</h2>
+                      <p class="section__subtitle">Section subtitle</p>
+                    </div>
+                    <div class="section__header-actions"><a class="link section__link" href="#"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                          <use xlink:href="assets/icons/clean/sprite.svg#download"></use>
+                        </svg><span>Cкачать каталог</span></a></div>
+                  </div>
+                  <div class="section__body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, dolorum ducimus fuga fugiat iusto quod sunt. A cum illum in ipsa molestiae quaerat, qui quibusdam quo sequi tempore vel, voluptatibus.</p>
+                  </div>
+                  <div class="section__footer section__footer--size-md">
+                    <div class="section__actions"><button class="button button--theme-secondary" type="button"><span>Показать еще</span></button></div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div class="ui__row">
+              <section class="section section--size-lg">
+                <div class="container section__container">
+                  <div class="section__header section__header--size-lg">
+                    <div class="section__header-content">
+                      <h2 class="section__title">Section with aside</h2>
+                      <p class="section__subtitle">Section subtitle</p>
+                    </div>
+                    <div class="section__header-actions"><a class="link section__link" href="#"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                          <use xlink:href="assets/icons/clean/sprite.svg#download"></use>
+                        </svg><span>Cкачать каталог</span></a></div>
+                  </div>
+                  <div class="section__grid">
+                    <div class="section__grid-main">
+                      <div class="section__body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, dolorum ducimus fuga fugiat iusto quod sunt. A cum illum in ipsa molestiae quaerat, qui quibusdam quo sequi tempore vel, voluptatibus.</p>
+                      </div>
+                      <div class="section__footer section__footer--size-lg">
+                        <div class="section__actions"><button class="button button--theme-secondary" type="button"><span>Показать еще</span></button></div>
+                      </div>
+                    </div>
+                    <div class="section-aside section__grid-aside">
+                      <div class="section-aside__inner"><button class="button"><span>button</span></button></div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div class="ui__row">
+              <section class="section section--size-lg">
+                <div class="container section__container">
+                  <div class="section__grid">
+                    <div class="section-aside section__grid-aside">
+                      <div class="section-aside__inner"><button class="button"><span>button</span></button></div>
+                    </div>
+                    <div class="section__grid-main">
+                      <div class="section__header section__header--size-lg">
+                        <div class="section__header-content">
+                          <h2 class="section__title">Section with aside</h2>
+                          <p class="section__subtitle">Section subtitle</p>
+                        </div>
+                        <div class="section__header-actions"><a class="link section__link" href="#"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                              <use xlink:href="assets/icons/clean/sprite.svg#download"></use>
+                            </svg><span>Cкачать каталог</span></a></div>
+                      </div>
+                      <div class="section__body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, dolorum ducimus fuga fugiat iusto quod sunt. A cum illum in ipsa molestiae quaerat, qui quibusdam quo sequi tempore vel, voluptatibus.</p>
+                      </div>
+                      <div class="section__footer section__footer--size-lg">
+                        <div class="section__actions"><button class="button button--theme-secondary" type="button"><span>Показать еще</span></button></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+          <div class="ui__block" id="ui-breadcrumbs">
+            <div class="ui__row">
+              <div class="ui__col">
+                <div class="h3">Breadcrumbs</div>
+              </div>
+            </div>
+            <div class="ui__row">
+              <div class="ui__col">
+                <div class="breadcrumbs">
+                  <div class="container breadcrumbs__container">
+                    <ul class="breadcrumbs__inner" data-component="drag-scroll">
+                      <ul class="breadcrumbs__list" data-drag-scroll="content">
+                        <li class="breadcrumbs__item"> <a class="breadcrumbs__link" href="#">Главная</a></li>
+                        <li class="breadcrumbs__item"> <a class="breadcrumbs__link" href="#">Страница</a></li>
+                        <li class="breadcrumbs__item"> <a class="breadcrumbs__link" href="#">Страница</a></li>
+                      </ul>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ui__block" id="ui-slider">
+            <div class="ui__row">
+              <div class="ui__col">
+                <div class="h3">Slider</div>
+              </div>
+            </div>
+            <div class="ui__row">
+              <div class="ui__col">
+                <div class="slider slider--navigation-integrated" data-slider-id="slider" data-component="slider">
+                  <div class="slider__content">
+                    <div class="swiper-button-prev slider__button slider__button--prev" data-slider-button="prev"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                        <use xlink:href="assets/icons/clean/sprite.svg#arrow--left"></use>
+                      </svg></div>
+                    <div class="swiper slider__inner" data-slider="inner">
+                      <div class="swiper-wrapper slider__wrapper" data-slider="wrapper">
+                        <div class="swiper-slide slider__slide">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, beatae corporis cum, deleniti, doloremque eos harum libero maiores neque nesciunt nostrum provident ullam voluptatibus. Architecto autem ea pariatur repudiandae velit.</p>
+                        </div>
+                        <div class="swiper-slide slider__slide">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, beatae corporis cum, deleniti, doloremque eos harum libero maiores neque nesciunt nostrum provident ullam voluptatibus. Architecto autem ea pariatur repudiandae velit.</p>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, beatae corporis cum, deleniti, doloremque eos harum libero maiores neque nesciunt nostrum provident ullam voluptatibus. Architecto autem ea pariatur repudiandae velit.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-button-next slider__button slider__button--next" data-slider-button="next"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                        <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
+                      </svg></div>
+                  </div>
+                  <div class="swiper-pagination slider__pagination" data-slider="pagination"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__main">
+          <div class="footer__main-info"> <a class="footer__logo" href="index.html"><img src="assets/media/logos/main--gray.png" alt="" /></a>
+            <div class="footer__main-caption"><strong>Рукава, запорная арматура и БРС</strong><span>Компания ВДВЛ © 2025</span></div>
+          </div>
+          <div class="footer__contacts"> <a class="link link--theme-gray footer__contacts-link" href="tel: +7 (812) 602-92-15"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                <use xlink:href="assets/icons/clean/sprite.svg#phone"></use>
+              </svg><span>+7 (812) 602-92-15</span></a><a class="link footer__contacts-link" href="mailto: info@vdvl.ru"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                <use xlink:href="assets/icons/clean/sprite.svg#mail"></use>
+              </svg><span>info@vdvl.ru</span></a><button class="link footer__contacts-order" type="button" data-bs-toggle="modal" data-bs-target="#modal-callback">Заказать звонок</button></div>
+          <div class="socials footer__socials"><a class="socials__item" href="#"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                <use xlink:href="assets/icons/clean/sprite.svg#logo--telegram"></use>
+              </svg></a><a class="socials__item" href="#"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                <use xlink:href="assets/icons/clean/sprite.svg#logo--whatsapp"></use>
+              </svg></a></div>
+          <div class="footer__caption">Минимальная сумма заказа 20 000 руб. <br/> Работаем только с юридическими лицами!</div>
+        </div>
+        <div class="footer__nav">
+          <ul>
+            <li><a href="#">Каталог</a></li>
+            <li><a href="#">Информация</a></li>
+            <li><a href="#">О компании</a></li>
+            <li><a href="#">Доставка</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
+        </div>
+        <div class="footer__actions"> <a class="footer__fast" href="#">Быстрый расчет сметы</a></div>
+        <div class="footer__links"> <a class="footer__link" href="#">Правила поставки товара</a><a class="footer__link" href="#">Политика конфиденциальности</a><a class="footer__link" href="#">Соглашение об обработке персональных данных</a></div>
+      </div>
+    </div>
+  </footer>
+  <div class="modal fade modal-callback modal--size-md" id="modal-callback" aria-hidden="aria-hidden" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content"><button class="modal-close" type="button" data-bs-dismiss="modal" aria-label="Close"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+            <use xlink:href="assets/icons/clean/sprite.svg#close"></use>
+          </svg></button>
+        <div class="modal__inner">
+          <form action="#">
+            <div class="modal__header">
+              <h2 class="modal__title">МЫ ВАМ ПЕРЕЗВОНИМ</h2>
+            </div>
+            <div class="modal__body">
+              <p class="modal__text">Оставьте заявку и наш специалист перезвонит в течение 5-ти минут</p>
+              <div class="modal__form">
+                <div class="input input--type-text" data-component="input">
+                  <div class="input__title">Ваше имя<span>*</span></div><label class="input__wrapper"><!-- Маски указываюстя в data-mask, варианты: number, letters, phone, mail, phone-email--><input class="input__native" type="text" name="input" placeholder="Укажите Ваше Имя" data-input="native" data-mask="letters" data-required="data-required"></input></label><span class="input__message">Обязательно для заполнения</span>
+                </div>
+                <div class="input input--type-text" data-component="input">
+                  <div class="input__title">Телефон<span>*</span></div><label class="input__wrapper"><!-- Маски указываюстя в data-mask, варианты: number, letters, phone, mail, phone-email--><input class="input__native" type="text" name="phone" placeholder="Укажите телефон для связи" data-input="native" data-mask="phone" data-required="data-required"></input></label><span class="input__message">Обязательно для заполнения</span>
+                </div>
+              </div>
+            </div>
+            <div class="modal__footer"> <button class="button modal__button" type="button"><span>ЗАКАЗАТЬ ЗВОНОК</span><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                  <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
+                </svg></button></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preloader" data-preloader="component"><span class="preloader__logo" style="background-image: url('./assets/media/logos/main.png')"><span class="preloader__mask" data-preloader="mask"></span></span></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (document.querySelector('[data-preloader="component"]')) {
+        const preloader = document.querySelector('[data-preloader="component"]');
+        const preloaderMask = preloader.querySelector('[data-preloader="mask"]');
+        const images = document.querySelectorAll('img');
+        const imagesCount = images.length;
+        const body = document.querySelector('body');
+        const percent = 100 / imagesCount;
+        let progress = 0;
+        let loadedImg = 0;
+
+        const imgLoad = () => {
+          progress += percent;
+          loadedImg++;
+          unlock(progress, loadedImg);
+        };
+
+        const unlock = (progress, loadedImg) => {
+          progress = Math.round(progress);
+          preloaderMask.style.width = (100 - progress) + '%';
+
+          if (progress >= 100 || loadedImg === imagesCount) {
+            setTimeout(() => {
+              preloader.classList.add('is-loaded');
+            }, 250);
+
+            setTimeout(() => {
+              body.classList.add('is-unlock');
+            }, 500);
+          }
+        };
+
+        if (imagesCount !== 0) {
+          images.forEach(img => {
+            if (img.complete) {
+              imgLoad();
+            } else {
+              img.onload = () => {
+                imgLoad();
+              };
+
+              img.onerror = () => {
+                imgLoad();
+              };
+            }
+          });
+        } else {
+          progress = 100;
+          loadedImg = 0;
+
+          unlock(progress, loadedImg);
+        }
+      }
+    })
+  </script>
+  <script src="js/index.js"></script>
+</body>
+
+</html>
