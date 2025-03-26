@@ -1018,6 +1018,66 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
   document.addEventListener('DOMContentLoaded', mount);
 })(window);
 
+/***/ }),
+
+/***/ 568:
+/***/ (() => {
+
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+(function (window) {
+  var build = function build(element) {
+    var _element$getAttribute;
+    var max = (_element$getAttribute = element.getAttribute('data-view-more-max')) !== null && _element$getAttribute !== void 0 ? _element$getAttribute : 10;
+    var list = element.querySelector('[data-view-more="list"]');
+    var items = Array.from(list.querySelectorAll('[data-view-more="item"'));
+    var trigger = element.querySelector('[data-view-more="trigger"]');
+    var triggerContent = trigger.querySelector('span') ? trigger.querySelector('span') : trigger;
+    var isHidden = false;
+    var changeItems = function changeItems() {
+      if (items.length <= max) {
+        trigger.classList.add('is-hidden');
+        return;
+      }
+      ;
+      isHidden = !isHidden;
+      trigger.classList.remove('is-hidden');
+      triggerContent.textContent = isHidden ? 'Показать еще' : 'Скрыть';
+      var hiddenItems = items.slice(max);
+      if (isHidden) {
+        trigger.classList.remove('is-swapped');
+      } else {
+        trigger.classList.add('is-swapped');
+      }
+      hiddenItems.forEach(function (item) {
+        if (isHidden) {
+          item.classList.add('is-hidden');
+        } else {
+          item.classList.remove('is-hidden');
+        }
+      });
+    };
+    changeItems();
+    trigger.addEventListener('click', function () {
+      changeItems();
+    });
+  };
+  var mount = function mount() {
+    var elements = Array.from(document.querySelectorAll('[data-component="view-more"]'));
+    elements.forEach(build);
+  };
+  window.app.components = _objectSpread(_objectSpread({}, window.app.components), {}, {
+    'view-more': {
+      init: build
+    }
+  });
+  document.addEventListener('DOMContentLoaded', mount);
+})(window);
+
 /***/ })
 
 /******/ 	});
@@ -1298,7 +1358,10 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
 var tabs = __webpack_require__(618);
 // EXTERNAL MODULE: ./src/core/ui/backdrop/index.js
 var backdrop = __webpack_require__(770);
+// EXTERNAL MODULE: ./src/core/ui/view-more/index.js
+var view_more = __webpack_require__(568);
 ;// CONCATENATED MODULE: ./src/core/ui/index.js
+
 
 
 

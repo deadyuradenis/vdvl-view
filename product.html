@@ -215,7 +215,7 @@
                 </div>
                 <div class="product-detail__main-actions"> <button class="button product-detail__button" type="button"><span>ЗАДАТЬ ВОПРОС</span></button></div>
               </div>
-              <div class="product-detail__call"> <span class="product-detail__call-title">Отправьте заявку прямо сейчас и мы поможем вам расчитать смету</span><a class="button product-detail__call-button" href="#"><span>РАССЧИТАТЬ СМЕТУ</span></a></div>
+              <div class="product-detail__call"> <span class="product-detail__call-title">Отправьте заявку прямо сейчас и мы поможем вам расчитать смету</span><a class="button product-detail__call-button" href="#"><span>РАССЧИТАТЬ СМЕТУ           </span></a></div>
             </div>
           </div>
           <div class="product-info section-product__info" data-component="tabs">
@@ -224,7 +224,7 @@
             </div>
             <div class="product-info__content">
               <div class="product-info__content-page product-info__content-page--clear" data-tabs="item">
-                <div class="product-table">
+                <div class="product-table view-more" data-component="view-more" data-view-more-max="10">
                   <div class="product-table-header product-table__header">
                     <div class="product-table-header__item">
                       <div class="product-table-header__prop">Модель</div>
@@ -239,8 +239,8 @@
                       <div class="product-table-header__prop">Цена (руб./шт.)</div>
                     </div>
                   </div>
-                  <div class="product-table__body">
-                    <div class="product-table-item product-table__item" data-component="product-table-item">
+                  <div class="product-table__body" data-view-more="list">
+                    <div class="product-table-item product-table__item" data-component="product-table-item" data-view-more="item">
                       <div class="product-table-item__header" data-product-table-item="header">
                         <div class="product-table-item__prop">
                           <h4 class="product-table-item__prop-title">Модель</h4><span class="product-table-item__prop-value">С-051</span>
@@ -262,7 +262,7 @@
                             <div class="product-table-item__prop product-table-item__prop--price">
                               <h4 class="product-table-item__prop-title">Цена (руб./шт.)</h4><span class="product-table-item__prop-value">271,01</span>
                             </div>
-                            <div class="counter product-table-item__counter" data-component="counter"><!-- При добавлении или убавлении берется текущее значение дата-аттрибута data-step, не может быть меньше текущего значения data-min и data-max--><input class="counter__input" type="text" name="counter" value="0" data-counter="input" data-min="0" data-max="1000" data-step="1" />
+                            <div class="counter product-table-item__counter counter--style-default" data-component="counter"><!-- При добавлении или убавлении берется текущее значение дата-аттрибута data-step, не может быть меньше текущего значения data-min и data-max--><input class="counter__input" type="text" name="counter" value="0" data-counter="input" data-min="0" data-max="1000" data-step="1" />
                               <div class="counter__main"> <button class="button button--theme-gray button--type-icon counter__action" type="button" data-counter-action="minus"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
                                     <use xlink:href="assets/icons/clean/sprite.svg#minus"></use>
                                   </svg></button>
@@ -277,7 +277,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="product-table-item product-table__item" data-component="product-table-item">
+                    <div class="product-table-item product-table__item" data-component="product-table-item" data-view-more="item">
                       <div class="product-table-item__header" data-product-table-item="header">
                         <div class="product-table-item__prop">
                           <h4 class="product-table-item__prop-title">Модель</h4><span class="product-table-item__prop-value">С-051</span>
@@ -299,7 +299,7 @@
                             <div class="product-table-item__prop product-table-item__prop--price">
                               <h4 class="product-table-item__prop-title">Цена (руб./шт.)</h4><span class="product-table-item__prop-value">271,01</span>
                             </div>
-                            <div class="counter product-table-item__counter" data-component="counter"><!-- При добавлении или убавлении берется текущее значение дата-аттрибута data-step, не может быть меньше текущего значения data-min и data-max--><input class="counter__input" type="text" name="counter" value="0" data-counter="input" data-min="0" data-max="1000" data-step="1" />
+                            <div class="counter product-table-item__counter counter--style-default" data-component="counter"><!-- При добавлении или убавлении берется текущее значение дата-аттрибута data-step, не может быть меньше текущего значения data-min и data-max--><input class="counter__input" type="text" name="counter" value="0" data-counter="input" data-min="0" data-max="1000" data-step="1" />
                               <div class="counter__main"> <button class="button button--theme-gray button--type-icon counter__action" type="button" data-counter-action="minus"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
                                     <use xlink:href="assets/icons/clean/sprite.svg#minus"></use>
                                   </svg></button>
@@ -314,7 +314,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="product-table-item product-table__item" data-component="product-table-item">
+                    <div class="product-table-item product-table__item" data-component="product-table-item" data-view-more="item">
                       <div class="product-table-item__header" data-product-table-item="header">
                         <div class="product-table-item__prop">
                           <h4 class="product-table-item__prop-title">Модель</h4><span class="product-table-item__prop-value">С-051</span>
@@ -336,7 +336,7 @@
                             <div class="product-table-item__prop product-table-item__prop--price">
                               <h4 class="product-table-item__prop-title">Цена (руб./шт.)</h4><span class="product-table-item__prop-value">271,01</span>
                             </div>
-                            <div class="counter product-table-item__counter" data-component="counter"><!-- При добавлении или убавлении берется текущее значение дата-аттрибута data-step, не может быть меньше текущего значения data-min и data-max--><input class="counter__input" type="text" name="counter" value="0" data-counter="input" data-min="0" data-max="1000" data-step="1" />
+                            <div class="counter product-table-item__counter counter--style-default" data-component="counter"><!-- При добавлении или убавлении берется текущее значение дата-аттрибута data-step, не может быть меньше текущего значения data-min и data-max--><input class="counter__input" type="text" name="counter" value="0" data-counter="input" data-min="0" data-max="1000" data-step="1" />
                               <div class="counter__main"> <button class="button button--theme-gray button--type-icon counter__action" type="button" data-counter-action="minus"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
                                     <use xlink:href="assets/icons/clean/sprite.svg#minus"></use>
                                   </svg></button>
@@ -351,7 +351,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="product-table-item product-table__item" data-component="product-table-item">
+                    <div class="product-table-item product-table__item" data-component="product-table-item" data-view-more="item">
                       <div class="product-table-item__header" data-product-table-item="header">
                         <div class="product-table-item__prop">
                           <h4 class="product-table-item__prop-title">Модель</h4><span class="product-table-item__prop-value">С-051</span>
@@ -373,7 +373,7 @@
                             <div class="product-table-item__prop product-table-item__prop--price">
                               <h4 class="product-table-item__prop-title">Цена (руб./шт.)</h4><span class="product-table-item__prop-value">271,01</span>
                             </div>
-                            <div class="counter product-table-item__counter" data-component="counter"><!-- При добавлении или убавлении берется текущее значение дата-аттрибута data-step, не может быть меньше текущего значения data-min и data-max--><input class="counter__input" type="text" name="counter" value="0" data-counter="input" data-min="0" data-max="1000" data-step="1" />
+                            <div class="counter product-table-item__counter counter--style-default" data-component="counter"><!-- При добавлении или убавлении берется текущее значение дата-аттрибута data-step, не может быть меньше текущего значения data-min и data-max--><input class="counter__input" type="text" name="counter" value="0" data-counter="input" data-min="0" data-max="1000" data-step="1" />
                               <div class="counter__main"> <button class="button button--theme-gray button--type-icon counter__action" type="button" data-counter-action="minus"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
                                     <use xlink:href="assets/icons/clean/sprite.svg#minus"></use>
                                   </svg></button>
@@ -388,7 +388,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="product-table-item product-table__item" data-component="product-table-item">
+                    <div class="product-table-item product-table__item" data-component="product-table-item" data-view-more="item">
                       <div class="product-table-item__header" data-product-table-item="header">
                         <div class="product-table-item__prop">
                           <h4 class="product-table-item__prop-title">Модель</h4><span class="product-table-item__prop-value">С-051</span>
@@ -410,7 +410,7 @@
                             <div class="product-table-item__prop product-table-item__prop--price">
                               <h4 class="product-table-item__prop-title">Цена (руб./шт.)</h4><span class="product-table-item__prop-value">271,01</span>
                             </div>
-                            <div class="counter product-table-item__counter" data-component="counter"><!-- При добавлении или убавлении берется текущее значение дата-аттрибута data-step, не может быть меньше текущего значения data-min и data-max--><input class="counter__input" type="text" name="counter" value="0" data-counter="input" data-min="0" data-max="1000" data-step="1" />
+                            <div class="counter product-table-item__counter counter--style-default" data-component="counter"><!-- При добавлении или убавлении берется текущее значение дата-аттрибута data-step, не может быть меньше текущего значения data-min и data-max--><input class="counter__input" type="text" name="counter" value="0" data-counter="input" data-min="0" data-max="1000" data-step="1" />
                               <div class="counter__main"> <button class="button button--theme-gray button--type-icon counter__action" type="button" data-counter-action="minus"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
                                     <use xlink:href="assets/icons/clean/sprite.svg#minus"></use>
                                   </svg></button>
@@ -425,7 +425,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="product-table-item product-table__item" data-component="product-table-item">
+                    <div class="product-table-item product-table__item" data-component="product-table-item" data-view-more="item">
                       <div class="product-table-item__header" data-product-table-item="header">
                         <div class="product-table-item__prop">
                           <h4 class="product-table-item__prop-title">Модель</h4><span class="product-table-item__prop-value">С-051</span>
@@ -447,7 +447,7 @@
                             <div class="product-table-item__prop product-table-item__prop--price">
                               <h4 class="product-table-item__prop-title">Цена (руб./шт.)</h4><span class="product-table-item__prop-value">271,01</span>
                             </div>
-                            <div class="counter product-table-item__counter" data-component="counter"><!-- При добавлении или убавлении берется текущее значение дата-аттрибута data-step, не может быть меньше текущего значения data-min и data-max--><input class="counter__input" type="text" name="counter" value="0" data-counter="input" data-min="0" data-max="1000" data-step="1" />
+                            <div class="counter product-table-item__counter counter--style-default" data-component="counter"><!-- При добавлении или убавлении берется текущее значение дата-аттрибута data-step, не может быть меньше текущего значения data-min и data-max--><input class="counter__input" type="text" name="counter" value="0" data-counter="input" data-min="0" data-max="1000" data-step="1" />
                               <div class="counter__main"> <button class="button button--theme-gray button--type-icon counter__action" type="button" data-counter-action="minus"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
                                     <use xlink:href="assets/icons/clean/sprite.svg#minus"></use>
                                   </svg></button>
@@ -462,10 +462,231 @@
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="product-table__footer"><button class="link product-table__footer-more" type="button"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
-                        <use xlink:href="assets/icons/clean/sprite.svg#chevron--down"></use>
-                      </svg><span>Показать еще 3 размера</span></button></div>
+                    <div class="product-table-item product-table__item" data-component="product-table-item" data-view-more="item">
+                      <div class="product-table-item__header" data-product-table-item="header">
+                        <div class="product-table-item__prop">
+                          <h4 class="product-table-item__prop-title">Модель</h4><span class="product-table-item__prop-value">С-051</span>
+                        </div><svg class="icon product-table-item__header-icon" aria-hidden="aria-hidden" role="presentation">
+                          <use xlink:href="assets/icons/clean/sprite.svg#chevron--down"></use>
+                        </svg>
+                      </div>
+                      <div class="product-table-item__body" data-product-table-item="body">
+                        <div class="product-table-item__body-inner" data-product-table-item="inner">
+                          <div class="product-table-item__list">
+                            <div class="product-table-item__prop">
+                              <h4 class="product-table-item__prop-title">Внутренний диаметр трубы (дюймы)</h4><span class="product-table-item__prop-value">1/2</span>
+                            </div>
+                            <div class="product-table-item__prop">
+                              <h4 class="product-table-item__prop-title">Внутренний диаметр трубы (мм)</h4><span class="product-table-item__prop-value">13</span>
+                            </div>
+                          </div>
+                          <div class="product-table-item__controls">
+                            <div class="product-table-item__prop product-table-item__prop--price">
+                              <h4 class="product-table-item__prop-title">Цена (руб./шт.)</h4><span class="product-table-item__prop-value">271,01</span>
+                            </div>
+                            <div class="counter product-table-item__counter counter--style-default" data-component="counter"><!-- При добавлении или убавлении берется текущее значение дата-аттрибута data-step, не может быть меньше текущего значения data-min и data-max--><input class="counter__input" type="text" name="counter" value="0" data-counter="input" data-min="0" data-max="1000" data-step="1" />
+                              <div class="counter__main"> <button class="button button--theme-gray button--type-icon counter__action" type="button" data-counter-action="minus"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                                    <use xlink:href="assets/icons/clean/sprite.svg#minus"></use>
+                                  </svg></button>
+                                <div class="counter__result"> <span data-counter="result">0</span><span>шт</span></div><button class="button button--theme-gray button--type-icon counter__action" type="button" data-counter-action="plus"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                                    <use xlink:href="assets/icons/clean/sprite.svg#plus"></use>
+                                  </svg></button>
+                              </div>
+                            </div><button class="button button--size-sm product-table-item__button" type="button"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                                <use xlink:href="assets/icons/clean/sprite.svg#cart"></use>
+                              </svg><span>Добавить в корзину</span></button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="product-table-item product-table__item" data-component="product-table-item" data-view-more="item">
+                      <div class="product-table-item__header" data-product-table-item="header">
+                        <div class="product-table-item__prop">
+                          <h4 class="product-table-item__prop-title">Модель</h4><span class="product-table-item__prop-value">С-051</span>
+                        </div><svg class="icon product-table-item__header-icon" aria-hidden="aria-hidden" role="presentation">
+                          <use xlink:href="assets/icons/clean/sprite.svg#chevron--down"></use>
+                        </svg>
+                      </div>
+                      <div class="product-table-item__body" data-product-table-item="body">
+                        <div class="product-table-item__body-inner" data-product-table-item="inner">
+                          <div class="product-table-item__list">
+                            <div class="product-table-item__prop">
+                              <h4 class="product-table-item__prop-title">Внутренний диаметр трубы (дюймы)</h4><span class="product-table-item__prop-value">1/2</span>
+                            </div>
+                            <div class="product-table-item__prop">
+                              <h4 class="product-table-item__prop-title">Внутренний диаметр трубы (мм)</h4><span class="product-table-item__prop-value">13</span>
+                            </div>
+                          </div>
+                          <div class="product-table-item__controls">
+                            <div class="product-table-item__prop product-table-item__prop--price">
+                              <h4 class="product-table-item__prop-title">Цена (руб./шт.)</h4><span class="product-table-item__prop-value">271,01</span>
+                            </div>
+                            <div class="counter product-table-item__counter counter--style-default" data-component="counter"><!-- При добавлении или убавлении берется текущее значение дата-аттрибута data-step, не может быть меньше текущего значения data-min и data-max--><input class="counter__input" type="text" name="counter" value="0" data-counter="input" data-min="0" data-max="1000" data-step="1" />
+                              <div class="counter__main"> <button class="button button--theme-gray button--type-icon counter__action" type="button" data-counter-action="minus"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                                    <use xlink:href="assets/icons/clean/sprite.svg#minus"></use>
+                                  </svg></button>
+                                <div class="counter__result"> <span data-counter="result">0</span><span>шт</span></div><button class="button button--theme-gray button--type-icon counter__action" type="button" data-counter-action="plus"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                                    <use xlink:href="assets/icons/clean/sprite.svg#plus"></use>
+                                  </svg></button>
+                              </div>
+                            </div><button class="button button--size-sm product-table-item__button" type="button"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                                <use xlink:href="assets/icons/clean/sprite.svg#cart"></use>
+                              </svg><span>Добавить в корзину</span></button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="product-table-item product-table__item" data-component="product-table-item" data-view-more="item">
+                      <div class="product-table-item__header" data-product-table-item="header">
+                        <div class="product-table-item__prop">
+                          <h4 class="product-table-item__prop-title">Модель</h4><span class="product-table-item__prop-value">С-051</span>
+                        </div><svg class="icon product-table-item__header-icon" aria-hidden="aria-hidden" role="presentation">
+                          <use xlink:href="assets/icons/clean/sprite.svg#chevron--down"></use>
+                        </svg>
+                      </div>
+                      <div class="product-table-item__body" data-product-table-item="body">
+                        <div class="product-table-item__body-inner" data-product-table-item="inner">
+                          <div class="product-table-item__list">
+                            <div class="product-table-item__prop">
+                              <h4 class="product-table-item__prop-title">Внутренний диаметр трубы (дюймы)</h4><span class="product-table-item__prop-value">1/2</span>
+                            </div>
+                            <div class="product-table-item__prop">
+                              <h4 class="product-table-item__prop-title">Внутренний диаметр трубы (мм)</h4><span class="product-table-item__prop-value">13</span>
+                            </div>
+                          </div>
+                          <div class="product-table-item__controls">
+                            <div class="product-table-item__prop product-table-item__prop--price">
+                              <h4 class="product-table-item__prop-title">Цена (руб./шт.)</h4><span class="product-table-item__prop-value">271,01</span>
+                            </div>
+                            <div class="counter product-table-item__counter counter--style-default" data-component="counter"><!-- При добавлении или убавлении берется текущее значение дата-аттрибута data-step, не может быть меньше текущего значения data-min и data-max--><input class="counter__input" type="text" name="counter" value="0" data-counter="input" data-min="0" data-max="1000" data-step="1" />
+                              <div class="counter__main"> <button class="button button--theme-gray button--type-icon counter__action" type="button" data-counter-action="minus"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                                    <use xlink:href="assets/icons/clean/sprite.svg#minus"></use>
+                                  </svg></button>
+                                <div class="counter__result"> <span data-counter="result">0</span><span>шт</span></div><button class="button button--theme-gray button--type-icon counter__action" type="button" data-counter-action="plus"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                                    <use xlink:href="assets/icons/clean/sprite.svg#plus"></use>
+                                  </svg></button>
+                              </div>
+                            </div><button class="button button--size-sm product-table-item__button" type="button"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                                <use xlink:href="assets/icons/clean/sprite.svg#cart"></use>
+                              </svg><span>Добавить в корзину</span></button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="product-table-item product-table__item" data-component="product-table-item" data-view-more="item">
+                      <div class="product-table-item__header" data-product-table-item="header">
+                        <div class="product-table-item__prop">
+                          <h4 class="product-table-item__prop-title">Модель</h4><span class="product-table-item__prop-value">С-051</span>
+                        </div><svg class="icon product-table-item__header-icon" aria-hidden="aria-hidden" role="presentation">
+                          <use xlink:href="assets/icons/clean/sprite.svg#chevron--down"></use>
+                        </svg>
+                      </div>
+                      <div class="product-table-item__body" data-product-table-item="body">
+                        <div class="product-table-item__body-inner" data-product-table-item="inner">
+                          <div class="product-table-item__list">
+                            <div class="product-table-item__prop">
+                              <h4 class="product-table-item__prop-title">Внутренний диаметр трубы (дюймы)</h4><span class="product-table-item__prop-value">1/2</span>
+                            </div>
+                            <div class="product-table-item__prop">
+                              <h4 class="product-table-item__prop-title">Внутренний диаметр трубы (мм)</h4><span class="product-table-item__prop-value">13</span>
+                            </div>
+                          </div>
+                          <div class="product-table-item__controls">
+                            <div class="product-table-item__prop product-table-item__prop--price">
+                              <h4 class="product-table-item__prop-title">Цена (руб./шт.)</h4><span class="product-table-item__prop-value">271,01</span>
+                            </div>
+                            <div class="counter product-table-item__counter counter--style-default" data-component="counter"><!-- При добавлении или убавлении берется текущее значение дата-аттрибута data-step, не может быть меньше текущего значения data-min и data-max--><input class="counter__input" type="text" name="counter" value="0" data-counter="input" data-min="0" data-max="1000" data-step="1" />
+                              <div class="counter__main"> <button class="button button--theme-gray button--type-icon counter__action" type="button" data-counter-action="minus"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                                    <use xlink:href="assets/icons/clean/sprite.svg#minus"></use>
+                                  </svg></button>
+                                <div class="counter__result"> <span data-counter="result">0</span><span>шт</span></div><button class="button button--theme-gray button--type-icon counter__action" type="button" data-counter-action="plus"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                                    <use xlink:href="assets/icons/clean/sprite.svg#plus"></use>
+                                  </svg></button>
+                              </div>
+                            </div><button class="button button--size-sm product-table-item__button" type="button"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                                <use xlink:href="assets/icons/clean/sprite.svg#cart"></use>
+                              </svg><span>Добавить в корзину</span></button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="product-table-item product-table__item" data-component="product-table-item" data-view-more="item">
+                      <div class="product-table-item__header" data-product-table-item="header">
+                        <div class="product-table-item__prop">
+                          <h4 class="product-table-item__prop-title">Модель</h4><span class="product-table-item__prop-value">С-051</span>
+                        </div><svg class="icon product-table-item__header-icon" aria-hidden="aria-hidden" role="presentation">
+                          <use xlink:href="assets/icons/clean/sprite.svg#chevron--down"></use>
+                        </svg>
+                      </div>
+                      <div class="product-table-item__body" data-product-table-item="body">
+                        <div class="product-table-item__body-inner" data-product-table-item="inner">
+                          <div class="product-table-item__list">
+                            <div class="product-table-item__prop">
+                              <h4 class="product-table-item__prop-title">Внутренний диаметр трубы (дюймы)</h4><span class="product-table-item__prop-value">1/2</span>
+                            </div>
+                            <div class="product-table-item__prop">
+                              <h4 class="product-table-item__prop-title">Внутренний диаметр трубы (мм)</h4><span class="product-table-item__prop-value">13</span>
+                            </div>
+                          </div>
+                          <div class="product-table-item__controls">
+                            <div class="product-table-item__prop product-table-item__prop--price">
+                              <h4 class="product-table-item__prop-title">Цена (руб./шт.)</h4><span class="product-table-item__prop-value">271,01</span>
+                            </div>
+                            <div class="counter product-table-item__counter counter--style-default" data-component="counter"><!-- При добавлении или убавлении берется текущее значение дата-аттрибута data-step, не может быть меньше текущего значения data-min и data-max--><input class="counter__input" type="text" name="counter" value="0" data-counter="input" data-min="0" data-max="1000" data-step="1" />
+                              <div class="counter__main"> <button class="button button--theme-gray button--type-icon counter__action" type="button" data-counter-action="minus"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                                    <use xlink:href="assets/icons/clean/sprite.svg#minus"></use>
+                                  </svg></button>
+                                <div class="counter__result"> <span data-counter="result">0</span><span>шт</span></div><button class="button button--theme-gray button--type-icon counter__action" type="button" data-counter-action="plus"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                                    <use xlink:href="assets/icons/clean/sprite.svg#plus"></use>
+                                  </svg></button>
+                              </div>
+                            </div><button class="button button--size-sm product-table-item__button" type="button"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                                <use xlink:href="assets/icons/clean/sprite.svg#cart"></use>
+                              </svg><span>Добавить в корзину</span></button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="product-table-item product-table__item" data-component="product-table-item" data-view-more="item">
+                      <div class="product-table-item__header" data-product-table-item="header">
+                        <div class="product-table-item__prop">
+                          <h4 class="product-table-item__prop-title">Модель</h4><span class="product-table-item__prop-value">С-051</span>
+                        </div><svg class="icon product-table-item__header-icon" aria-hidden="aria-hidden" role="presentation">
+                          <use xlink:href="assets/icons/clean/sprite.svg#chevron--down"></use>
+                        </svg>
+                      </div>
+                      <div class="product-table-item__body" data-product-table-item="body">
+                        <div class="product-table-item__body-inner" data-product-table-item="inner">
+                          <div class="product-table-item__list">
+                            <div class="product-table-item__prop">
+                              <h4 class="product-table-item__prop-title">Внутренний диаметр трубы (дюймы)</h4><span class="product-table-item__prop-value">1/2</span>
+                            </div>
+                            <div class="product-table-item__prop">
+                              <h4 class="product-table-item__prop-title">Внутренний диаметр трубы (мм)</h4><span class="product-table-item__prop-value">13</span>
+                            </div>
+                          </div>
+                          <div class="product-table-item__controls">
+                            <div class="product-table-item__prop product-table-item__prop--price">
+                              <h4 class="product-table-item__prop-title">Цена (руб./шт.)</h4><span class="product-table-item__prop-value">271,01</span>
+                            </div>
+                            <div class="counter product-table-item__counter counter--style-default" data-component="counter"><!-- При добавлении или убавлении берется текущее значение дата-аттрибута data-step, не может быть меньше текущего значения data-min и data-max--><input class="counter__input" type="text" name="counter" value="0" data-counter="input" data-min="0" data-max="1000" data-step="1" />
+                              <div class="counter__main"> <button class="button button--theme-gray button--type-icon counter__action" type="button" data-counter-action="minus"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                                    <use xlink:href="assets/icons/clean/sprite.svg#minus"></use>
+                                  </svg></button>
+                                <div class="counter__result"> <span data-counter="result">0</span><span>шт</span></div><button class="button button--theme-gray button--type-icon counter__action" type="button" data-counter-action="plus"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                                    <use xlink:href="assets/icons/clean/sprite.svg#plus"></use>
+                                  </svg></button>
+                              </div>
+                            </div><button class="button button--size-sm product-table-item__button" type="button"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                                <use xlink:href="assets/icons/clean/sprite.svg#cart"></use>
+                              </svg><span>Добавить в корзину</span></button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div><button class="link product-table__more" type="button" data-view-more="trigger"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                      <use xlink:href="assets/icons/clean/sprite.svg#chevron--down"></use>
+                    </svg><span>Показать еще</span></button>
                 </div>
               </div>
             </div>
