@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ru" data-color-theme="default">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=bfe4d085-132b-4c3b-8abd-6161c7860a46&lang=ru_RU"></script>
+  <style type="text/css">
+    .preloader {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1000;
+      background-color: #fff;
+      -webkit-transition: opacity 0.5s ease;
+      -o-transition: opacity 0.5s ease;
+      transition: opacity 0.5s ease;
+    }
+
+    .preloader__logo {
+      position: relative;
+      -webkit-transition: opacity 0.6s ease, transform 0.6s ease;
+      -o-transition: opacity 0.6s ease, transform 0.6s ease;
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      opacity: 1;
+      width: 163px;
+      height: 40px;
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+
+    .preloader__mask {
+      content: "";
+      display: block;
+      position: absolute;
+      inset: 0 0 0 auto;
+      width: 100%;
+      height: 100%;
+      -webkit-transition: width 0.4s ease;
+      -o-transition: width 0.4s ease;
+      transition: width 0.4s ease;
+      background-color: #fff;
+    }
+
+    .preloader.is-loaded {
+      pointer-events: none;
+      opacity: 0;
+      -webkit-transition-delay: 0.4s;
+      -o-transition-delay: 0.4s;
+      transition-delay: 0.4s;
+    }
+
+    .preloader.is-loaded .preloader__logo {
+      opacity: 0;
+      transform: scale(0.97);
+    }
+  </style>
+  <link rel="stylesheet" href="css/vendors/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/vendors/fancybox.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<title>Контакты. Раздел</title>
+
+<body class="layout">
+  <header class="header" data-component="header">
+    <div class="header-top header__top">
+      <div class="container">
+        <div class="header-top__content"> <a class="header-top__fast" href="fast-order.html"><span>Быстрый расчет сметы</span></a>
+          <div class="header-top__contacts"> <a class="link link--theme-white header-top__link" href="tel: +7 (812) 602-92-15"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                <use xlink:href="assets/icons/clean/sprite.svg#phone"></use>
+              </svg><span>+7 (812) 602-92-15</span></a><a class="link link--theme-white header-top__link header-top__link--mail" href="mailto: info@vdvl.ru"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                <use xlink:href="assets/icons/clean/sprite.svg#mail"></use>
+              </svg><span>info@vdvl.ru</span></a><button class="link link--theme-white header-top__order" type="button" data-bs-toggle="modal" data-bs-target="#modal-callback">Заказать звонок</button></div>
+          <div class="header-top__caption">Работаем только с юридическими лицами!</div>
+        </div>
+      </div>
+    </div>
+    <div class="header-main header__main">
+      <div class="container">
+        <div class="header-main__content"><a class="header-main__logo" href="index.html"><img src="assets/media/logos/main.png" alt="" /></a>
+          <div class="header-main__caption">Рукава, запорная арматура и быстроразъемные соединения</div>
+          <div class="header-main__main">
+            <nav class="header-main__nav" data-component="header-nav">
+              <ul>
+                <li> <a href="catalog.html">Каталог</a></li>
+                <li> <a href="delivery.html">Доставка</a></li>
+                <li> <a href="blog.html">Информация</a></li>
+                <li> <a href="about.html">О компании</a></li>
+                <li> <a href="contacts.html">Контакты</a></li>
+                <li> <a href="catalog.html">Каталог</a></li>
+                <li> <a href="delivery.html">Доставка</a></li>
+                <li> <a href="blog.html">Информация</a></li>
+                <li> <a href="about.html">О компании</a></li>
+                <li> <a href="contacts.html">Контакты</a></li>
+              </ul>
+            </nav><a class="header-main__cart" href="cart.html"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                <use xlink:href="assets/icons/clean/sprite.svg#cart"></use>
+              </svg></a>
+            <div class="header-main__search"><button class="header-main__search-trigger" type="button" data-header-search="trigger"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                  <use xlink:href="assets/icons/clean/sprite.svg#search"></use>
+                </svg><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                  <use xlink:href="assets/icons/clean/sprite.svg#close--large"></use>
+                </svg></button>
+              <div class="header-search header-main__search-dropdown" data-component="header-search">
+                <div class="header-search__main">
+                  <form action="#">
+                    <div class="header-search__main-inner">
+                      <div class="input header-search__input input--type-text" data-component="input"><label class="input__wrapper"><!-- Маски указываюстя в data-mask, варианты: number, letters, phone, mail, phone-email, time, price, inn--><input class="input__native" type="text" name="search" placeholder="Введите запрос" data-input="native"></input><svg class="icon input__icon input__icon--left" aria-hidden="aria-hidden" role="presentation">
+                            <use xlink:href="assets/icons/clean/sprite.svg#search"></use>
+                          </svg><button class="button button--size-sm header-search__button" type="button"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                              <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
+                            </svg></button></label><span class="input__message">Обязательно для заполнения</span></div>
+                    </div>
+                  </form>
+                </div>
+                <div class="header-search-result header-search__result">
+                  <ul class="header-search-result__list">
+                    <li class="header-search-result__item"><a class="header-search-result__item-link" href="#">
+                        <h4 class="header-search-result__item-title">Усиленные хомуты с Т-образными болтами</h4>
+                        <p class="header-search-result__item-text">Усиленные хомуты с Т-образными болтами Усиленные хомуты с Т-образными болтами Хомуты типа ТВС - конструкционно состоят из полосы из нержавеющей стали серии 300, шириной 3/4”, толщиной 0.025” и стягивающий болта из легированной стали. ...</p>
+                      </a></li>
+                    <li class="header-search-result__item"><a class="header-search-result__item-link" href="#">
+                        <h4 class="header-search-result__item-title">Усиленные хомуты с Т-образными болтами</h4>
+                        <p class="header-search-result__item-text">Усиленные хомуты с Т-образными болтами Усиленные хомуты с Т-образными болтами Хомуты типа ТВС - конструкционно состоят из полосы из нержавеющей стали серии 300, шириной 3/4”, толщиной 0.025” и стягивающий болта из легированной стали. ...</p>
+                      </a></li>
+                    <li class="header-search-result__item"><a class="header-search-result__item-link" href="#">
+                        <h4 class="header-search-result__item-title">Усиленные хомуты с Т-образными болтами</h4>
+                        <p class="header-search-result__item-text">Усиленные хомуты с Т-образными болтами Усиленные хомуты с Т-образными болтами Хомуты типа ТВС - конструкционно состоят из полосы из нержавеющей стали серии 300, шириной 3/4”, толщиной 0.025” и стягивающий болта из легированной стали. ...</p>
+                      </a></li>
+                    <li class="header-search-result__item"><a class="header-search-result__item-link" href="#">
+                        <h4 class="header-search-result__item-title">Усиленные хомуты с Т-образными болтами</h4>
+                        <p class="header-search-result__item-text">Усиленные хомуты с Т-образными болтами Усиленные хомуты с Т-образными болтами Хомуты типа ТВС - конструкционно состоят из полосы из нержавеющей стали серии 300, шириной 3/4”, толщиной 0.025” и стягивающий болта из легированной стали. ...</p>
+                      </a></li>
+                    <li class="header-search-result__item"><a class="header-search-result__item-link" href="#">
+                        <h4 class="header-search-result__item-title">Усиленные хомуты с Т-образными болтами</h4>
+                        <p class="header-search-result__item-text">Усиленные хомуты с Т-образными болтами Усиленные хомуты с Т-образными болтами Хомуты типа ТВС - конструкционно состоят из полосы из нержавеющей стали серии 300, шириной 3/4”, толщиной 0.025” и стягивающий болта из легированной стали. ...</p>
+                      </a></li>
+                    <li class="header-search-result__item"><a class="header-search-result__item-link" href="#">
+                        <h4 class="header-search-result__item-title">Усиленные хомуты с Т-образными болтами</h4>
+                        <p class="header-search-result__item-text">Усиленные хомуты с Т-образными болтами Усиленные хомуты с Т-образными болтами Хомуты типа ТВС - конструкционно состоят из полосы из нержавеющей стали серии 300, шириной 3/4”, толщиной 0.025” и стягивающий болта из легированной стали. ...</p>
+                      </a></li>
+                  </ul>
+                </div>
+              </div>
+            </div><button class="header-main__nav-trigger" type="button" data-header-nav="trigger"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                <use xlink:href="assets/icons/clean/sprite.svg#menu"></use>
+              </svg><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                <use xlink:href="assets/icons/clean/sprite.svg#close--large"></use>
+              </svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-nav" data-header-nav="dropdown">
+      <div class="container">
+        <ul class="header-nav__list-wrapper" data-component="drag-scroll">
+          <ul class="header-nav__list" data-header-nav="dropdown-list" data-drag-scroll="content"></ul>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <div class="layout__main">
+    <div class="breadcrumbs">
+      <div class="container breadcrumbs__container">
+        <ul class="breadcrumbs__inner" data-component="drag-scroll">
+          <ul class="breadcrumbs__list" data-drag-scroll="content">
+            <li class="breadcrumbs__item"> <a class="breadcrumbs__link" href="#">Главная</a></li>
+            <li class="breadcrumbs__item"> <a class="breadcrumbs__link" href="#">Каталог</a></li>
+            <li class="breadcrumbs__item"> <a class="breadcrumbs__link" href="#">Камлоки</a></li>
+          </ul>
+        </ul>
+      </div>
+    </div>
+    <section class="section section-catalog">
+      <div class="container section__container">
+        <div class="section__grid">
+          <div class="section-aside section__grid-aside">
+            <div class="section-aside__inner">
+              <div class="catalog-aside section-catalog__aside">
+                <div class="catalog-aside-nav catalog-aside__nav" data-component="catalog-aside-nav">
+                  <div class="catalog-aside-nav__header" data-catalog-aside-nav="trigger">
+                    <h2 class="catalog-aside-nav__title">КАТАЛОГ</h2>
+                    <div class="catalog-aside-nav__trigger"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                        <use xlink:href="assets/icons/clean/sprite.svg#plus"></use>
+                      </svg><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                        <use xlink:href="assets/icons/clean/sprite.svg#minus"></use>
+                      </svg></div>
+                  </div>
+                  <div class="catalog-aside-nav__body" data-catalog-aside-nav="block">
+                    <ul class="catalog-aside-nav__list" data-catalog-aside-nav="content">
+                      <li class="catalog-aside-nav-item catalog-aside-nav__item" data-component="catalog-aside-nav-item">
+                        <div class="catalog-aside-nav-item__header"><button class="catalog-aside-nav-item__button" type="button" data-catalog-aside-nav-item="trigger"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                              <use xlink:href="assets/icons/clean/sprite.svg#arrowhead--right"></use>
+                            </svg><span>Камлоки</span></button></div>
+                        <div class="catalog-aside-nav-item__body" data-catalog-aside-nav-item="block">
+                          <ul class="catalog-aside-nav-item__list" data-catalog-aside-nav-item="content">
+                            <li class="catalog-aside-nav-item__link"> <a href="#">Камлоки алюминевые</a></li>
+                            <li class="catalog-aside-nav-item__link"> <a href="#">Камлоки из нержавеющей стали</a></li>
+                            <li class="catalog-aside-nav-item__link"> <a href="#">Уплотнения</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="catalog-aside-nav-item catalog-aside-nav__item" data-component="catalog-aside-nav-item">
+                        <div class="catalog-aside-nav-item__header"><button class="catalog-aside-nav-item__button" type="button" data-catalog-aside-nav-item="trigger"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                              <use xlink:href="assets/icons/clean/sprite.svg#arrowhead--right"></use>
+                            </svg><span>Хомуты</span></button></div>
+                      </li>
+                      <li class="catalog-aside-nav-item catalog-aside-nav__item" data-component="catalog-aside-nav-item">
+                        <div class="catalog-aside-nav-item__header"><button class="catalog-aside-nav-item__button" type="button" data-catalog-aside-nav-item="trigger"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                              <use xlink:href="assets/icons/clean/sprite.svg#arrowhead--right"></use>
+                            </svg><span>Краны, клапаны, запорная арматура</span></button></div>
+                        <div class="catalog-aside-nav-item__body" data-catalog-aside-nav-item="block">
+                          <ul class="catalog-aside-nav-item__list" data-catalog-aside-nav-item="content">
+                            <li class="catalog-aside-nav-item__link"> <a href="#">Краны</a></li>
+                            <li class="catalog-aside-nav-item__link"> <a href="#">клапаны</a></li>
+                            <li class="catalog-aside-nav-item__link"> <a href="#">запорная арматура</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="catalog-aside-nav-item catalog-aside-nav__item" data-component="catalog-aside-nav-item">
+                        <div class="catalog-aside-nav-item__header"><button class="catalog-aside-nav-item__button" type="button" data-catalog-aside-nav-item="trigger"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                              <use xlink:href="assets/icons/clean/sprite.svg#arrowhead--right"></use>
+                            </svg><span>Рукава</span></button></div>
+                        <div class="catalog-aside-nav-item__body" data-catalog-aside-nav-item="block">
+                          <ul class="catalog-aside-nav-item__list" data-catalog-aside-nav-item="content">
+                            <li class="catalog-aside-nav-item__link"> <a href="#">Рукава</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="catalog-aside-nav-item catalog-aside-nav__item" data-component="catalog-aside-nav-item">
+                        <div class="catalog-aside-nav-item__header"><button class="catalog-aside-nav-item__button" type="button" data-catalog-aside-nav-item="trigger"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                              <use xlink:href="assets/icons/clean/sprite.svg#arrowhead--right"></use>
+                            </svg><span>Быстроразъемные соединения</span></button></div>
+                        <div class="catalog-aside-nav-item__body" data-catalog-aside-nav-item="block">
+                          <ul class="catalog-aside-nav-item__list" data-catalog-aside-nav-item="content">
+                            <li class="catalog-aside-nav-item__link"> <a href="#">Быстроразъемные соединения</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="catalog-aside-nav-item catalog-aside-nav__item" data-component="catalog-aside-nav-item">
+                        <div class="catalog-aside-nav-item__header"><button class="catalog-aside-nav-item__button" type="button" data-catalog-aside-nav-item="trigger"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                              <use xlink:href="assets/icons/clean/sprite.svg#arrowhead--right"></use>
+                            </svg><span>Арматура и соединения для нефтепродуктов</span></button></div>
+                        <div class="catalog-aside-nav-item__body" data-catalog-aside-nav-item="block">
+                          <ul class="catalog-aside-nav-item__list" data-catalog-aside-nav-item="content">
+                            <li class="catalog-aside-nav-item__link"> <a href="#">Арматура и соединения для нефтепродуктов</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="catalog-aside-nav-item catalog-aside-nav__item" data-component="catalog-aside-nav-item">
+                        <div class="catalog-aside-nav-item__header"><button class="catalog-aside-nav-item__button" type="button" data-catalog-aside-nav-item="trigger"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                              <use xlink:href="assets/icons/clean/sprite.svg#arrowhead--right"></use>
+                            </svg><span>Арматура для пищевой промышленности</span></button></div>
+                        <div class="catalog-aside-nav-item__body" data-catalog-aside-nav-item="block">
+                          <ul class="catalog-aside-nav-item__list" data-catalog-aside-nav-item="content">
+                            <li class="catalog-aside-nav-item__link"> <a href="#">Арматура для пищевой промышленности</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="catalog-aside__info">
+                  <p><strong>БРС камлок camlock</strong>  применяется для присоединения рукава к различным устройствам.</p>
+                  <p>В промышленности соединение камлок используется для сообщения резервуаров и шлангов, с его помощью производятся многофункциональные системы быстроразъемных соединений.</p>
+                  <p>Быстрый монтаж, надёжное герметичное соединение.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section__grid-main">
+            <div class="section__header section__header--size-sm">
+              <div class="section__header-content">
+                <h1 class="section__title">Соединения БРС типа камлок</h1>
+              </div>
+            </div>
+            <div class="section__body">
+              <div class="grid grid--catalog"> <a class="card-category card-category--size-lg" href="#">
+                  <div class="card-category__content">
+                    <h4 class="card-category__title">Камлоки алюминевые</h4>
+                  </div>
+                  <picture class="card-category__image"><img src="assets/media/card/categories/15.png" alt="" /></picture>
+                </a><a class="card-category card-category--size-lg" href="#">
+                  <div class="card-category__content">
+                    <h4 class="card-category__title">Камлоки из нержавеющей стали</h4>
+                  </div>
+                  <picture class="card-category__image"><img src="assets/media/card/categories/16.png" alt="" /></picture>
+                </a><a class="card-category card-category--size-lg" href="#">
+                  <div class="card-category__content">
+                    <h4 class="card-category__title">Уплотнения</h4>
+                  </div>
+                  <picture class="card-category__image"><img src="assets/media/card/categories/17.png" alt="" /></picture>
+                </a></div>
+              <div class="catalog-seo section-catalog__seo"> <button class="button catalog-seo__button" type="button"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                    <use xlink:href="assets/icons/clean/sprite.svg#download"></use>
+                  </svg><span>Скачать прайс-лист</span></button>
+                <h2 class="catalog-seo__title">Соединения "камлок" - описание, конструкция, типы</h2>
+                <div class="info-block catalog-seo__info" data-component="more">
+                  <div class="info-block__inner" data-more="block">
+                    <div class="info-block__content" data-more="content">
+                      <p>Соединения типа camlock (камлок) - универсальные, самоблокирующиеся соединения кулачкового типа. Наличие прочного сцепления кулачковой муфты и адаптера, гарантирует устойчивость к вибрациям. Благодаря оснащению предохранительными зажимами, при монтаже камлока не требуются дополнительные фиксирующие приспособления.</p>
+                      <p>Камлок состоит из двух основных частей: ответная часть и приемная часть. Ответная часть комплектуется уплотнительным кольцом - адаптером, прокладкой, гарантирующей герметичность будущего соединения. Фиксация БРС camlock происходит посредством двух ручек, расположенных по бокам приёмной части. При опускании ручек, их специальные выступы заходят в пазы, расположенные на ответной части, и происходит надёжное сцепление.</p>
+                      <p>Соединения типа camlock (камлок) - универсальные, самоблокирующиеся соединения кулачкового типа. Наличие прочного сцепления кулачковой муфты и адаптера, гарантирует устойчивость к вибрациям. Благодаря оснащению предохранительными зажимами, при монтаже камлока не требуются дополнительные фиксирующие приспособления.</p>
+                    </div>
+                  </div><button class="info-block__more" type="button" data-more="trigger"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                      <use xlink:href="assets/icons/clean/sprite.svg#chevron--down"></use>
+                    </svg><span class="info-block__more-text"> <span>Развернуть</span><span>Скрыть</span></span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__main">
+          <div class="footer__main-info"> <a class="footer__logo" href="index.html"><img src="assets/media/logos/main--gray.png" alt="" /></a>
+            <div class="footer__main-caption"><strong>Рукава, запорная арматура и БРС</strong><span>Компания ВДВЛ © 2025</span></div>
+          </div>
+          <div class="footer__contacts"> <a class="link link--theme-gray footer__contacts-link" href="tel: +7 (812) 602-92-15"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                <use xlink:href="assets/icons/clean/sprite.svg#phone"></use>
+              </svg><span>+7 (812) 602-92-15</span></a><a class="link footer__contacts-link" href="mailto: info@vdvl.ru"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                <use xlink:href="assets/icons/clean/sprite.svg#mail"></use>
+              </svg><span>info@vdvl.ru</span></a><button class="link footer__contacts-order" type="button" data-bs-toggle="modal" data-bs-target="#modal-callback">Заказать звонок</button></div>
+          <div class="socials footer__socials"><a class="socials__item" href="#"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                <use xlink:href="assets/icons/clean/sprite.svg#logo--telegram"></use>
+              </svg></a><a class="socials__item" href="#"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                <use xlink:href="assets/icons/clean/sprite.svg#logo--whatsapp"></use>
+              </svg></a></div>
+          <div class="footer__caption">Минимальная сумма заказа 20 000 руб. <br/> Работаем только с юридическими лицами!</div>
+        </div>
+        <div class="footer__nav">
+          <ul>
+            <li><a href="#">Каталог</a></li>
+            <li><a href="#">Информация</a></li>
+            <li><a href="#">О компании</a></li>
+            <li><a href="#">Доставка</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
+        </div>
+        <div class="footer__actions"> <a class="footer__fast" href="fast-order.html">Быстрый расчет сметы</a></div>
+        <div class="footer__links"> <a class="footer__link" href="#">Правила поставки товара</a><a class="footer__link" href="#">Политика конфиденциальности</a><a class="footer__link" href="#">Соглашение об обработке персональных данных</a></div>
+      </div>
+    </div>
+  </footer>
+  <div class="modal fade modal-callback modal--size-md" id="modal-callback" aria-hidden="aria-hidden" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content"><button class="modal-close" type="button" data-bs-dismiss="modal" aria-label="Close"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+            <use xlink:href="assets/icons/clean/sprite.svg#close"></use>
+          </svg></button>
+        <div class="modal__inner">
+          <form action="#">
+            <div class="modal__header">
+              <h2 class="modal__title">МЫ ВАМ ПЕРЕЗВОНИМ</h2>
+            </div>
+            <div class="modal__body">
+              <p class="modal__text">Оставьте заявку и наш специалист перезвонит в течение 5-ти минут</p>
+              <div class="modal__form">
+                <div class="input input--type-text" data-component="input">
+                  <div class="input__title">Ваше имя<span>*</span></div><label class="input__wrapper"><!-- Маски указываюстя в data-mask, варианты: number, letters, phone, mail, phone-email, time, price, inn--><input class="input__native" type="text" name="input" placeholder="Укажите Ваше Имя" data-input="native" data-mask="letters" data-required="data-required"></input></label><span class="input__message">Обязательно для заполнения</span>
+                </div>
+                <div class="input input--type-text" data-component="input">
+                  <div class="input__title">Телефон<span>*</span></div><label class="input__wrapper"><!-- Маски указываюстя в data-mask, варианты: number, letters, phone, mail, phone-email, time, price, inn--><input class="input__native" type="text" name="phone" placeholder="Укажите телефон для связи" data-input="native" data-mask="phone" data-required="data-required"></input></label><span class="input__message">Обязательно для заполнения</span>
+                </div>
+              </div>
+            </div>
+            <div class="modal__footer"> <button class="button modal__button" type="button"><span>ЗАКАЗАТЬ ЗВОНОК</span><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                  <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
+                </svg></button></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preloader" data-preloader="component"><span class="preloader__logo" style="background-image: url('./assets/media/logos/main.png')"><span class="preloader__mask" data-preloader="mask"></span></span></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (document.querySelector('[data-preloader="component"]')) {
+        const preloader = document.querySelector('[data-preloader="component"]');
+        const preloaderMask = preloader.querySelector('[data-preloader="mask"]');
+        const images = document.querySelectorAll('img');
+        const imagesCount = images.length;
+        const body = document.querySelector('body');
+        const percent = 100 / imagesCount;
+        let progress = 0;
+        let loadedImg = 0;
+
+        const imgLoad = () => {
+          progress += percent;
+          loadedImg++;
+          unlock(progress, loadedImg);
+        };
+
+        const unlock = (progress, loadedImg) => {
+          progress = Math.round(progress);
+          preloaderMask.style.width = (100 - progress) + '%';
+
+          if (progress >= 100 || loadedImg === imagesCount) {
+            setTimeout(() => {
+              preloader.classList.add('is-loaded');
+            }, 250);
+
+            setTimeout(() => {
+              body.classList.add('is-unlock');
+            }, 500);
+          }
+        };
+
+        if (imagesCount !== 0) {
+          images.forEach(img => {
+            if (img.complete) {
+              imgLoad();
+            } else {
+              img.onload = () => {
+                imgLoad();
+              };
+
+              img.onerror = () => {
+                imgLoad();
+              };
+            }
+          });
+        } else {
+          progress = 100;
+          loadedImg = 0;
+
+          unlock(progress, loadedImg);
+        }
+      }
+    })
+  </script>
+  <script src="js/vendors/bootstrap.bundle.min.js"></script>
+  <script src="js/vendors/scrollbooster.min.js"></script>
+  <script src="js/vendors/swiper-bundle.min.js"></script>
+  <script src="js/vendors/imask.min.js"></script>
+  <script src="js/vendors/fancybox.umd.js"></script>
+  <script src="js/index.js"></script>
+</body>
+
+</html>

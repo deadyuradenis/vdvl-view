@@ -306,6 +306,95 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
 
 /***/ }),
 
+/***/ 378:
+/***/ (() => {
+
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+(function (window) {
+  var _window$app$lib = window.app.lib,
+    throttle = _window$app$lib.throttle,
+    setResizeObserver = _window$app$lib.setResizeObserver;
+  var build = function build(element) {
+    console.log('catalog-aside-nav-item');
+    console.log(element);
+    var block = element.querySelector('[data-catalog-aside-nav-item="block"]');
+    var content = element.querySelector('[data-catalog-aside-nav-item="content"]');
+    var trigger = element.querySelector('[data-catalog-aside-nav-item="trigger"]');
+    if (!block) return;
+    var update = function update() {
+      block.style.maxHeight = "".concat(content.offsetHeight, "px");
+    };
+    setResizeObserver(content, throttle(function () {
+      if (element.classList.contains('is-expanded')) update();
+    }, 300));
+    trigger.addEventListener('click', function () {
+      element.classList.toggle('is-expanded');
+      if (element.classList.contains('is-expanded')) {
+        block.style.maxHeight = "".concat(content.offsetHeight, "px");
+      } else {
+        block.style.maxHeight = '';
+      }
+    });
+  };
+  var mount = function mount() {
+    var elements = Array.from(document.querySelectorAll('[data-component="catalog-aside-nav-item"]'));
+    elements.forEach(build);
+  };
+  window.app.components = _objectSpread({}, window.app.components);
+  document.addEventListener('DOMContentLoaded', mount);
+})(window);
+
+/***/ }),
+
+/***/ 462:
+/***/ (() => {
+
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+(function (window) {
+  var _window$app$lib = window.app.lib,
+    throttle = _window$app$lib.throttle,
+    setResizeObserver = _window$app$lib.setResizeObserver;
+  var build = function build(element) {
+    console.log('catalog-aside-nav');
+    var block = element.querySelector('[data-catalog-aside-nav="block"]');
+    var content = element.querySelector('[data-catalog-aside-nav="content"]');
+    var trigger = element.querySelector('[data-catalog-aside-nav="trigger"]');
+    if (!block) return;
+    var update = function update() {
+      block.style.maxHeight = "".concat(content.offsetHeight, "px");
+    };
+    setResizeObserver(content, throttle(function () {
+      if (element.classList.contains('is-expanded')) update();
+    }, 300));
+    trigger.addEventListener('click', function () {
+      element.classList.toggle('is-expanded');
+      if (element.classList.contains('is-expanded')) {
+        block.style.maxHeight = "".concat(content.offsetHeight, "px");
+      } else {
+        block.style.maxHeight = '';
+      }
+    });
+  };
+  var mount = function mount() {
+    var elements = Array.from(document.querySelectorAll('[data-component="catalog-aside-nav"]'));
+    elements.forEach(build);
+  };
+  window.app.components = _objectSpread({}, window.app.components);
+  document.addEventListener('DOMContentLoaded', mount);
+})(window);
+
+/***/ }),
+
 /***/ 292:
 /***/ (() => {
 
@@ -3564,7 +3653,19 @@ var product_table_item = __webpack_require__(258);
 // import './cookies/index.js';
 // EXTERNAL MODULE: ./src/core/modules/modals/index.js
 var modals = __webpack_require__(292);
+// EXTERNAL MODULE: ./src/core/modules/catalog/catalog-aside/catalog-aside-nav/catalog-aside-nav/index.js
+var catalog_aside_nav = __webpack_require__(462);
+// EXTERNAL MODULE: ./src/core/modules/catalog/catalog-aside/catalog-aside-nav/catalog-aside-nav-item/index.js
+var catalog_aside_nav_item = __webpack_require__(378);
+;// CONCATENATED MODULE: ./src/core/modules/catalog/catalog-aside/catalog-aside-nav/index.js
+
+
+;// CONCATENATED MODULE: ./src/core/modules/catalog/catalog-aside/index.js
+
+;// CONCATENATED MODULE: ./src/core/modules/catalog/index.js
+
 ;// CONCATENATED MODULE: ./src/core/modules/index.js
+
 
 
 ;// CONCATENATED MODULE: ./src/app/index.js
