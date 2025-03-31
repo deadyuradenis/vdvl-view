@@ -66,7 +66,7 @@
   <link rel="stylesheet" href="css/vendors/fancybox.css">
   <link rel="stylesheet" href="css/index.css">
 </head>
-<title>Главная</title>
+<title>О компании</title>
 
 <body class="layout">
   <header class="header" data-component="header">
@@ -167,63 +167,67 @@
     </div>
   </header>
   <div class="layout__main">
-    <section class="section section--size-lg section-intro">
+    <div class="breadcrumbs">
+      <div class="container breadcrumbs__container">
+        <ul class="breadcrumbs__inner" data-component="drag-scroll">
+          <ul class="breadcrumbs__list" data-drag-scroll="content">
+            <li class="breadcrumbs__item"> <a class="breadcrumbs__link" href="#">Главная</a></li>
+            <li class="breadcrumbs__item"> <a class="breadcrumbs__link" href="#">О компании</a></li>
+          </ul>
+        </ul>
+      </div>
+    </div>
+    <section class="section section--size-lg">
       <div class="container section__container">
+        <div class="section__header section__header--size-rg">
+          <div class="section__header-content">
+            <h1 class="section__title">О компании</h1>
+          </div>
+        </div>
         <div class="section__body">
-          <div class="slider section-intro__slider slider--navigation-integrated" data-slider-id="intro" data-component="slider">
-            <div class="slider__content">
-              <div class="swiper slider__inner" data-slider="inner">
-                <div class="swiper-wrapper slider__wrapper" data-slider="wrapper">
-                  <div class="swiper-slide slider__slide">
-                    <div class="banner-product">
-                      <div class="banner-product__content">
-                        <h3 class="banner-product__title">Термозащитные рукава <span> EQUATOR </span></h3>
-                        <p class="banner-product__text">Защищают шланги, гибкие трубопроводы и другое оборудование от открытого пламени, пара, брызг расплавленного металла и стекла</p><a class="button banner-product__button" href="#"><span>ПОДРОБНЕЕ</span><svg class="icon" aria-hidden="aria-hidden" role="presentation">
-                            <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
-                          </svg></a>
+          <div class="about">
+            <div class="about__main">
+              <div class="about__content">
+                <h2>Компания ООО «ПрофТрейд» – надёжный поставщик трубопроводной арматуры в России. </h2>
+                <p>В ассортименте: фитинги и адаптеры, кулачковые соединения с пазами, хомуты, соединительная арматура, обжимные, быстроразъемные соединения, шланги и рукава, в том числе металлические, продукция для ёмкостей любого объёма (танкеры, цистерны, резервуарные хранилища), краны, фитинги и т.п..</p>
+                <p>ООО «ПрофТрейд» ориентируется на оптовых заказчиков, работает по принципу тесного сотрудничества с заводами, фабриками и иными производственными площадками. Работаем со всеми регионами.</p>
+              </div>
+            </div>
+            <div class="slider about__slider slider--navigation-integrated" data-slider-id="about" data-component="slider">
+              <div class="slider__content">
+                <div class="swiper slider__inner" data-slider="inner">
+                  <div class="swiper-wrapper slider__wrapper" data-slider="wrapper">
+                    <div class="swiper-slide slider__slide">
+                      <div class="about__image-wrapper">
+                        <picture class="about__image" data-src="assets/media/about/1.jpg" data-fancybox="about"><img src="assets/media/about/1.jpg" alt="" />
+                          <source srcset="assets/media/about/1.webp" type="image/webp" />
+                        </picture>
                       </div>
-                      <picture class="banner-product__image"><img src="assets/media/banner/product/1.png" alt="" /></picture>
                     </div>
-                  </div>
-                  <div class="swiper-slide slider__slide">
-                    <div class="banner-product">
-                      <div class="banner-product__content">
-                        <h3 class="banner-product__title">Термозащитные рукава <span> EVAQUATOR </span></h3><a class="button banner-product__button" href="#"><span>ПОДРОБНЕЕ</span><svg class="icon" aria-hidden="aria-hidden" role="presentation">
-                            <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
-                          </svg></a>
+                    <div class="swiper-slide slider__slide">
+                      <div class="about__image-wrapper">
+                        <picture class="about__image" data-src="assets/media/about/1.jpg" data-fancybox="about"><img src="assets/media/about/1.jpg" alt="" />
+                          <source srcset="assets/media/about/1.webp" type="image/webp" />
+                        </picture>
                       </div>
-                      <picture class="banner-product__image"><img src="assets/media/banner/product/1.png" alt="" /></picture>
+                    </div>
+                    <div class="swiper-slide slider__slide">
+                      <div class="about__image-wrapper">
+                        <picture class="about__image" data-src="assets/media/about/1.jpg" data-fancybox="about"><img src="assets/media/about/1.jpg" alt="" />
+                          <source srcset="assets/media/about/1.webp" type="image/webp" />
+                        </picture>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="slider__navigation" data-slider="navigation">
-                <div class="swiper-button-prev slider__button slider__button--prev" data-slider-button="prev"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
-                    <use xlink:href="assets/icons/clean/sprite.svg#arrow--left"></use>
-                  </svg></div>
-                <div class="swiper-button-next slider__button slider__button--next" data-slider-button="next"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
-                    <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
-                  </svg></div>
-              </div>
-            </div>
-            <div class="swiper-pagination slider__pagination" data-slider="pagination"></div>
-          </div>
-          <div class="grid grid--additional section-intro__additional">
-            <div class="intro-additional">
-              <div class="intro-additional__header">
-                <h3 class="intro-additional__title">ОПТОВЫЕ ПОСТАВКИ</h3>
-              </div>
-              <div class="intro-additional__body">
-                <p class="intro-additional__text">Вы можете приобрести любой вид трубопроводной арматуры, просто позвонив к нам в компанию и сделав заказ.</p>
-                <p class="intro-additional__text">Мы давно работаем в сфере поставок промышленного оборудования, и цены могут вас приятно удивить.</p><a class="intro-additional__phone" href="tel: +7 (812) 602-92-15">+7 (812) 602-92-15</a>
-              </div>
-            </div>
-            <div class="intro-additional">
-              <div class="intro-additional__header">
-                <h3 class="intro-additional__title">Нужен быстрый расчЕт?</h3>
-              </div>
-              <div class="intro-additional__body">
-                <p class="intro-additional__text">Отправьте нам запрос со списком, и мы рассчитаем смету.</p><a class="button intro-additional__button" href="fast-order.html"><span>РАССЧИТАТЬ СМЕТУ</span></a>
+                <div class="slider__navigation" data-slider="navigation">
+                  <div class="swiper-button-prev slider__button slider__button--prev" data-slider-button="prev"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                      <use xlink:href="assets/icons/clean/sprite.svg#arrow--left"></use>
+                    </svg></div>
+                  <div class="swiper-button-next slider__button slider__button--next" data-slider-button="next"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                      <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
+                    </svg></div>
+                </div>
               </div>
             </div>
           </div>
@@ -234,61 +238,7 @@
       <div class="container section__container">
         <div class="section__header section__header--size-lg">
           <div class="section__header-content">
-            <h2 class="section__title">Рукава, запорная арматура <br/> и быстроразъемные соединения в СПБ</h2>
-          </div>
-          <div class="section__header-actions"><a class="link section__link" href="#"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
-                <use xlink:href="assets/icons/clean/sprite.svg#download"></use>
-              </svg><span>Cкачать каталог</span></a></div>
-        </div>
-        <div class="section__body">
-          <div class="grid grid--categories"> <a class="card-category" href="#">
-              <div class="card-category__content">
-                <h4 class="card-category__title">КАМЛОКИ</h4>
-              </div>
-              <picture class="card-category__image"><img src="assets/media/card/categories/1.png" alt="" /></picture>
-            </a><a class="card-category" href="#">
-              <div class="card-category__content">
-                <h4 class="card-category__title">ХОМУТЫ</h4>
-              </div>
-              <picture class="card-category__image"><img src="assets/media/card/categories/2.png" alt="" /></picture>
-            </a><a class="card-category" href="#">
-              <div class="card-category__content">
-                <h4 class="card-category__title">БЫСТРОРАЗЪЕМНЫЕ СОЕДИНЕНИЯ (БРС)</h4>
-              </div>
-              <picture class="card-category__image"><img src="assets/media/card/categories/3.png" alt="" /></picture>
-            </a><a class="card-category" href="#">
-              <div class="card-category__content">
-                <h4 class="card-category__title">КРАНЫ, КЛАПАНЫ, ЗАПОРНАЯ АРМАТУРА</h4>
-              </div>
-              <picture class="card-category__image"><img src="assets/media/card/categories/4.png" alt="" /></picture>
-            </a><a class="card-category card-category--style-wide" href="#">
-              <div class="card-category__content">
-                <h4 class="card-category__title">Арматура и соединения <br/> для нефтепродуктов</h4>
-              </div>
-              <picture class="card-category__image">
-                <source media="(max-width: 767px)" srcset="assets/media/card/categories/5--mobile.png" /><img src="assets/media/card/categories/5.png" alt="" />
-              </picture>
-            </a><a class="card-category card-category--style-wide" href="#">
-              <div class="card-category__content">
-                <h4 class="card-category__title">Арматура и соединения <br/> для ПИЩЕВОЙ ПРОМЫШЛЕННОСТИ</h4>
-              </div>
-              <picture class="card-category__image">
-                <source media="(max-width: 767px)" srcset="assets/media/card/categories/6--mobile.png" /><img src="assets/media/card/categories/6.png" alt="" />
-              </picture>
-            </a><a class="card-category" href="#">
-              <div class="card-category__content">
-                <h4 class="card-category__title">РУКАВА</h4>
-              </div>
-              <picture class="card-category__image"><img src="assets/media/card/categories/7.png" alt="" /></picture>
-            </a></div>
-        </div>
-      </div>
-    </section>
-    <section class="section section--size-lg">
-      <div class="container section__container">
-        <div class="section__header section__header--size-lg">
-          <div class="section__header-content">
-            <h2 class="section__title">Надёжный поставщик <br/> трубопроводной арматуры в России</h2>
+            <h2 class="section__title">Надёжный поставщик трубопроводной арматуры в России</h2>
           </div>
         </div>
         <div class="section__body">
@@ -335,21 +285,6 @@
     </section>
     <section class="section section--size-lg">
       <div class="container section__container">
-        <div class="section__body">
-          <div class="banner-staff">
-            <div class="banner-staff__content">
-              <h3 class="banner-staff__title">АНДРЕЕВ Андрей АНДРЕЕВИЧ</h3><span class="banner-staff__subtitle">Генеральный директор компании</span>
-              <p class="banner-staff__text">Мы стремимся расширять границы конструктивного мышления и технических возможностей через инновации с клиентами.</p>
-            </div>
-            <picture class="banner-staff__image">
-              <source srcset="assets/media/banner/staff/1.png" type="image/webp" /><img src="assets/media/banner/staff/1.png" alt="" />
-            </picture><img class="banner-staff__background" src="assets/media/banner/staff/background.svg" alt="" /><img class="banner-staff__decor" src="assets/media/banner/staff/decor.svg" alt="" />
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section section--size-lg">
-      <div class="container section__container">
         <div class="section__header section__header--size-lg">
           <div class="section__header-content">
             <h2 class="section__title">Наши компании-партнеры </h2>
@@ -384,6 +319,123 @@
                       <div class="card-partner__image"> <img src="assets/media/card/partners/miratorg.png" alt="" /></div>
                       <h4 class="card-partner__title">ООО «Агропромышленный холдинг «Мираторг»</h4>
                     </a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section section--hidden section--size-lg">
+      <div class="container section__container">
+        <div class="section__header section__header--size-lg">
+          <div class="section__header-content">
+            <h2 class="section__title">Cотрудники</h2>
+          </div>
+          <div class="section__header-slider-navigation" data-slider="navigation" data-slider-navigation-id="staff">
+            <div class="swiper-button-prev slider__button slider__button--prev" data-slider-button="prev"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                <use xlink:href="assets/icons/clean/sprite.svg#arrow--left"></use>
+              </svg></div>
+            <div class="swiper-button-next slider__button slider__button--next" data-slider-button="next"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
+              </svg></div>
+          </div>
+        </div>
+        <div class="section__body">
+          <div class="slider slider--staff" data-slider-id="staff" data-component="slider">
+            <div class="slider__content">
+              <div class="swiper slider__inner" data-slider="inner">
+                <div class="swiper-wrapper slider__wrapper" data-slider="wrapper">
+                  <div class="swiper-slide slider__slide">
+                    <div class="card-staff">
+                      <picture class="card-staff__image">
+                        <source type="image/webp" /><img src="assets/media/card/staff/1.jpg" alt="" />
+                      </picture>
+                      <div class="card-staff__main">
+                        <h4 class="card-staff__title">Иванова ЛАРИСА</h4><span class="card-staff__subtitle">Генеральный директор</span>
+                        <div class="card-staff__info"> <a class="card-staff__link" href="tel: 8 (800) 555-35-35"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                              <use xlink:href="assets/icons/clean/sprite.svg#phone"></use>
+                            </svg><span>8 (800) 555-35-35</span></a><a class="card-staff__link" href="mailto: larisssa@vdvl.ru"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                              <use xlink:href="assets/icons/clean/sprite.svg#mail"></use>
+                            </svg><span>larisssa@vdvl.ru</span></a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide slider__slide">
+                    <div class="card-staff">
+                      <picture class="card-staff__image">
+                        <source type="image/webp" /><img src="assets/media/card/staff/2.jpg" alt="" />
+                      </picture>
+                      <div class="card-staff__main">
+                        <h4 class="card-staff__title">ИВАНОВ ИВАН</h4><span class="card-staff__subtitle">Заместитель директора</span>
+                        <div class="card-staff__info"> <a class="card-staff__link" href="tel: 8 (800) 555-35-35"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                              <use xlink:href="assets/icons/clean/sprite.svg#phone"></use>
+                            </svg><span>8 (800) 555-35-35</span></a><a class="card-staff__link" href="mailto: larisssa@vdvl.ru"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                              <use xlink:href="assets/icons/clean/sprite.svg#mail"></use>
+                            </svg><span>larisssa@vdvl.ru</span></a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide slider__slide">
+                    <div class="card-staff">
+                      <picture class="card-staff__image">
+                        <source type="image/webp" /><img src="assets/media/card/staff/3.jpg" alt="" />
+                      </picture>
+                      <div class="card-staff__main">
+                        <h4 class="card-staff__title">АЛЕКСАНДРИЙСКАЯ АЛЕКСАДРА</h4><span class="card-staff__subtitle">Операционный директор</span>
+                        <div class="card-staff__info"> <a class="card-staff__link" href="tel: 8 (800) 555-35-35"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                              <use xlink:href="assets/icons/clean/sprite.svg#phone"></use>
+                            </svg><span>8 (800) 555-35-35</span></a><a class="card-staff__link" href="mailto: larisssa@vdvl.ru"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                              <use xlink:href="assets/icons/clean/sprite.svg#mail"></use>
+                            </svg><span>larisssa@vdvl.ru</span></a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide slider__slide">
+                    <div class="card-staff">
+                      <picture class="card-staff__image">
+                        <source type="image/webp" /><img src="assets/media/card/staff/4.jpg" alt="" />
+                      </picture>
+                      <div class="card-staff__main">
+                        <h4 class="card-staff__title">КОНСТАНТИНОВ КОНСТАНТИН</h4><span class="card-staff__subtitle">Менеджер по продажам</span>
+                        <div class="card-staff__info"> <a class="card-staff__link" href="tel: 8 (800) 555-35-35"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                              <use xlink:href="assets/icons/clean/sprite.svg#phone"></use>
+                            </svg><span>8 (800) 555-35-35</span></a><a class="card-staff__link" href="mailto: larisssa@vdvl.ru"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                              <use xlink:href="assets/icons/clean/sprite.svg#mail"></use>
+                            </svg><span>larisssa@vdvl.ru</span></a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide slider__slide">
+                    <div class="card-staff">
+                      <picture class="card-staff__image">
+                        <source type="image/webp" /><img src="assets/media/card/staff/5.jpg" alt="" />
+                      </picture>
+                      <div class="card-staff__main">
+                        <h4 class="card-staff__title">НОСОВА АНАСТАСИЯ</h4><span class="card-staff__subtitle">Техническая поддержка</span>
+                        <div class="card-staff__info"> <a class="card-staff__link" href="tel: 8 (800) 555-35-35"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                              <use xlink:href="assets/icons/clean/sprite.svg#phone"></use>
+                            </svg><span>8 (800) 555-35-35</span></a><a class="card-staff__link" href="mailto: larisssa@vdvl.ru"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                              <use xlink:href="assets/icons/clean/sprite.svg#mail"></use>
+                            </svg><span>larisssa@vdvl.ru</span></a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide slider__slide">
+                    <div class="card-staff">
+                      <picture class="card-staff__image">
+                        <source type="image/webp" /><img src="assets/media/card/staff/4.jpg" alt="" />
+                      </picture>
+                      <div class="card-staff__main">
+                        <h4 class="card-staff__title">Олег</h4><span class="card-staff__subtitle">Менеджер по продажам</span>
+                        <div class="card-staff__info"> <a class="card-staff__link" href="tel: 8 (800) 555-35-35"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                              <use xlink:href="assets/icons/clean/sprite.svg#phone"></use>
+                            </svg><span>8 (800) 555-35-35</span></a><a class="card-staff__link" href="mailto: larisssa@vdvl.ru"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                              <use xlink:href="assets/icons/clean/sprite.svg#mail"></use>
+                            </svg><span>larisssa@vdvl.ru</span></a></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -451,26 +503,83 @@
         </div>
       </div>
     </section>
-    <section class="section section--size-lg section-seo">
+    <section class="section section--hidden section--size-lg">
       <div class="container section__container">
         <div class="section__header section__header--size-lg">
           <div class="section__header-content">
-            <h2 class="section__title">SEO-ТЕКСТ СО СПОЙЛЕРОМ</h2>
+            <h2 class="section__title">СЕРТИФИКАТЫ и ЛИЦЕНЗИИ</h2>
+          </div>
+          <div class="section__header-slider-navigation" data-slider="navigation" data-slider-navigation-id="licenses">
+            <div class="swiper-button-prev slider__button slider__button--prev" data-slider-button="prev"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                <use xlink:href="assets/icons/clean/sprite.svg#arrow--left"></use>
+              </svg></div>
+            <div class="swiper-button-next slider__button slider__button--next" data-slider-button="next"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
+              </svg></div>
           </div>
         </div>
         <div class="section__body">
-          <div class="info-block section-seo__info" data-component="more">
-            <div class="info-block__inner" data-more="block">
-              <div class="info-block__content" data-more="content">
-                <p>Компания VDVL предоставляет широкий спектр услуг в сфере веб-разработки и цифровых технологий. Мы специализируемся на создании эффективных сайтов, веб-приложений и уникальных решений для бизнеса любого масштаба.</p>
-                <p>Мы понимаем, что каждая компания уникальна, поэтому разрабатываем индивидуальные решения, отвечающие специфике вашего бизнеса. От эффективного дизайна до внедрения современных технологий — VdVL всегда рядом, чтобы помочь вашему бизнесу расти.</p>
-                <p>Компания VDVL предоставляет широкий спектр услуг в сфере веб-разработки и цифровых технологий. Мы специализируемся на создании эффективных сайтов, веб-приложений и уникальных решений для бизнеса любого масштаба.</p>
-                <p>Мы понимаем, что каждая компания уникальна, поэтому разрабатываем индивидуальные решения, отвечающие специфике вашего бизнеса. От эффективного дизайна до внедрения современных технологий — VdVL всегда рядом, чтобы помочь вашему бизнесу расти.</p>
-                <p>Компания VDVL предоставляет широкий спектр услуг в сфере веб-разработки и цифровых технологий. Мы специализируемся на создании эффективных сайтов, веб-приложений и уникальных решений для бизнеса любого масштаба.</p>
+          <div class="slider slider--licenses" data-slider-id="licenses" data-component="slider">
+            <div class="slider__content">
+              <div class="swiper slider__inner" data-slider="inner">
+                <div class="swiper-wrapper slider__wrapper" data-slider="wrapper">
+                  <div class="swiper-slide slider__slide">
+                    <div class="card-license" data-src="assets/media/card/licenses/1.jpg" data-fancybox="licenses">
+                      <picture class="card-license__image"><img src="assets/media/card/licenses/1.jpg" alt="" />
+                        <source srcset="assets/media/card/licenses/1.jpg" type="image/webp" />
+                      </picture><svg class="icon card-license__icon" aria-hidden="aria-hidden" role="presentation">
+                        <use xlink:href="assets/icons/clean/sprite.svg#search"></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="swiper-slide slider__slide">
+                    <div class="card-license" data-src="assets/media/card/licenses/2.jpg" data-fancybox="licenses">
+                      <picture class="card-license__image"><img src="assets/media/card/licenses/2.jpg" alt="" />
+                        <source srcset="assets/media/card/licenses/2.jpg" type="image/webp" />
+                      </picture><svg class="icon card-license__icon" aria-hidden="aria-hidden" role="presentation">
+                        <use xlink:href="assets/icons/clean/sprite.svg#search"></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="swiper-slide slider__slide">
+                    <div class="card-license" data-src="assets/media/card/licenses/3.jpg" data-fancybox="licenses">
+                      <picture class="card-license__image"><img src="assets/media/card/licenses/3.jpg" alt="" />
+                        <source srcset="assets/media/card/licenses/3.jpg" type="image/webp" />
+                      </picture><svg class="icon card-license__icon" aria-hidden="aria-hidden" role="presentation">
+                        <use xlink:href="assets/icons/clean/sprite.svg#search"></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="swiper-slide slider__slide">
+                    <div class="card-license" data-src="assets/media/card/licenses/4.jpg" data-fancybox="licenses">
+                      <picture class="card-license__image"><img src="assets/media/card/licenses/4.jpg" alt="" />
+                        <source srcset="assets/media/card/licenses/4.jpg" type="image/webp" />
+                      </picture><svg class="icon card-license__icon" aria-hidden="aria-hidden" role="presentation">
+                        <use xlink:href="assets/icons/clean/sprite.svg#search"></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="swiper-slide slider__slide">
+                    <div class="card-license" data-src="assets/media/card/licenses/1.jpg" data-fancybox="licenses">
+                      <picture class="card-license__image"><img src="assets/media/card/licenses/1.jpg" alt="" />
+                        <source srcset="assets/media/card/licenses/1.jpg" type="image/webp" />
+                      </picture><svg class="icon card-license__icon" aria-hidden="aria-hidden" role="presentation">
+                        <use xlink:href="assets/icons/clean/sprite.svg#search"></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="swiper-slide slider__slide">
+                    <div class="card-license" data-src="assets/media/card/licenses/1.jpg" data-fancybox="licenses">
+                      <picture class="card-license__image"><img src="assets/media/card/licenses/1.jpg" alt="" />
+                        <source srcset="assets/media/card/licenses/1.jpg" type="image/webp" />
+                      </picture><svg class="icon card-license__icon" aria-hidden="aria-hidden" role="presentation">
+                        <use xlink:href="assets/icons/clean/sprite.svg#search"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div><button class="info-block__more" type="button" data-more="trigger"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
-                <use xlink:href="assets/icons/clean/sprite.svg#chevron--down"></use>
-              </svg><span class="info-block__more-text"> <span>Развернуть</span><span>Скрыть</span></span></button>
+            </div>
           </div>
         </div>
       </div>

@@ -66,7 +66,7 @@
   <link rel="stylesheet" href="css/vendors/fancybox.css">
   <link rel="stylesheet" href="css/index.css">
 </head>
-<title>Информация</title>
+<title>Быстрый расчет сметы</title>
 
 <body class="layout">
   <header class="header" data-component="header">
@@ -172,101 +172,47 @@
         <ul class="breadcrumbs__inner" data-component="drag-scroll">
           <ul class="breadcrumbs__list" data-drag-scroll="content">
             <li class="breadcrumbs__item"> <a class="breadcrumbs__link" href="#">Главная</a></li>
-            <li class="breadcrumbs__item"> <a class="breadcrumbs__link" href="#">Информация</a></li>
+            <li class="breadcrumbs__item"> <a class="breadcrumbs__link" href="#">Быстрый расчет сметы</a></li>
           </ul>
         </ul>
       </div>
     </div>
     <section class="section">
       <div class="container section__container">
-        <div class="section__header section__header--size-rg">
+        <div class="section__header section__header--size-md">
           <div class="section__header-content">
-            <h2 class="section__title">Информация</h2>
+            <h2 class="section__title">Быстрый расчет сметы</h2>
           </div>
         </div>
         <div class="section__body">
-          <div class="grid grid--articles">
-            <div class="card-article">
-              <div class="card-article__main">
-                <h3 class="card-article__title">Запорная арматура - это важнейший элемент трубопровода</h3>
-                <p class="card-article__text">Неформованные резинотехнические изделия (РТИ) или рукава - предназначаются для транспортировки жидкостей, сыпучей продукции и газообразных сред в промышленности и быту. Применяются шланги для перекачки нефти и нефтепродуктов, подачи пищевых составов на технологическую линию, для откачивания паводковой воды, полива огорода, пр.</p>
-              </div><a class="button button--size-md card-article__button" href="article.html"><span>ПОДРОБНЕЕ</span><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+          <div class="fast-order">
+            <p class="fast-order__text">Для расчета сметы заполните поля «Ваше Имя», «Ваш телефон» и прикрепите файл со списком. Мы свяжемся с вами в ближайшее время.</p>
+            <div class="grid-form fast-order__grid">
+              <div class="grid-form__row">
+                <div class="grid-form__col">
+                  <div class="input input--type-text" data-component="input">
+                    <div class="input__title">Ваше имя <span>*</span></div><label class="input__wrapper"><!-- Маски указываюстя в data-mask, варианты: number, letters, phone, mail, phone-email, time, price, inn--><input class="input__native" type="text" name="name" placeholder="Укажите Ваше Имя" data-input="native" data-mask="letters" data-required="data-required"></input></label><span class="input__message">Обязательно для заполнения</span>
+                  </div>
+                </div>
+                <div class="grid-form__col">
+                  <div class="input input--type-text" data-component="input">
+                    <div class="input__title">Телефон <span>*</span></div><label class="input__wrapper"><!-- Маски указываюстя в data-mask, варианты: number, letters, phone, mail, phone-email, time, price, inn--><input class="input__native" type="text" name="phone" placeholder="Укажите телефон для связи" data-input="native" data-mask="phone" data-required="data-required"></input></label><span class="input__message">Обязательно для заполнения</span>
+                  </div>
+                </div>
+                <div class="grid-form__col grid-form__col--input-file">
+                  <div class="input-file" data-component="input-file">
+                    <div class="input-file__title">Файл со списком <span>*</span></div><label class="input-file__wrapper"><input class="input-file__input" type="file" name="file" data-input-file="input" />
+                      <div class="button button--theme-secondary input-file__button"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                          <use xlink:href="assets/icons/clean/sprite.svg#attachment"></use>
+                        </svg><span>ПРИКРЕПИТЬ ДОКУМЕНТ</span></div>
+                      <div class="input-file__content" data-input-file="content"></div>
+                    </label>
+                  </div>
+                </div>
+              </div><button class="button fast-order__button" type="button" disabled><span>ОТПРАВИТЬ</span><svg class="icon" aria-hidden="aria-hidden" role="presentation">
                   <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
-                </svg></a>
+                </svg></button>
             </div>
-            <div class="card-article">
-              <div class="card-article__main">
-                <h3 class="card-article__title">Запорная арматура - это важнейший элемент трубопровода</h3>
-                <p class="card-article__text">Неформованные резинотехнические изделия (РТИ) или рукава - предназначаются для транспортировки жидкостей, сыпучей продукции и газообразных сред в промышленности и быту. Применяются шланги для перекачки нефти и нефтепродуктов, подачи пищевых составов на технологическую линию, для откачивания паводковой воды, полива огорода, пр.</p>
-              </div><a class="button button--size-md card-article__button" href="article.html"><span>ПОДРОБНЕЕ</span><svg class="icon" aria-hidden="aria-hidden" role="presentation">
-                  <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
-                </svg></a>
-            </div>
-            <div class="card-article">
-              <div class="card-article__main">
-                <h3 class="card-article__title">Запорная арматура - это важнейший элемент трубопровода</h3>
-                <p class="card-article__text">Неформованные резинотехнические изделия (РТИ) или рукава - предназначаются для транспортировки жидкостей, сыпучей продукции и газообразных сред в промышленности и быту. Применяются шланги для перекачки нефти и нефтепродуктов, подачи пищевых составов на технологическую линию, для откачивания паводковой воды, полива огорода, пр.</p>
-              </div><a class="button button--size-md card-article__button" href="article.html"><span>ПОДРОБНЕЕ</span><svg class="icon" aria-hidden="aria-hidden" role="presentation">
-                  <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
-                </svg></a>
-            </div>
-            <div class="card-article">
-              <div class="card-article__main">
-                <h3 class="card-article__title">Запорная арматура - это важнейший элемент трубопровода</h3>
-                <p class="card-article__text">Неформованные резинотехнические изделия (РТИ) или рукава - предназначаются для транспортировки жидкостей, сыпучей продукции и газообразных сред в промышленности и быту. Применяются шланги для перекачки нефти и нефтепродуктов, подачи пищевых составов на технологическую линию, для откачивания паводковой воды, полива огорода, пр.</p>
-              </div><a class="button button--size-md card-article__button" href="article.html"><span>ПОДРОБНЕЕ</span><svg class="icon" aria-hidden="aria-hidden" role="presentation">
-                  <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
-                </svg></a>
-            </div>
-            <div class="card-article">
-              <div class="card-article__main">
-                <h3 class="card-article__title">Запорная арматура - это важнейший элемент трубопровода</h3>
-                <p class="card-article__text">Неформованные резинотехнические изделия (РТИ) или рукава - предназначаются для транспортировки жидкостей, сыпучей продукции и газообразных сред в промышленности и быту. Применяются шланги для перекачки нефти и нефтепродуктов, подачи пищевых составов на технологическую линию, для откачивания паводковой воды, полива огорода, пр.</p>
-              </div><a class="button button--size-md card-article__button" href="article.html"><span>ПОДРОБНЕЕ</span><svg class="icon" aria-hidden="aria-hidden" role="presentation">
-                  <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
-                </svg></a>
-            </div>
-            <div class="card-article">
-              <div class="card-article__main">
-                <h3 class="card-article__title">Запорная арматура - это важнейший элемент трубопровода</h3>
-                <p class="card-article__text">Неформованные резинотехнические изделия (РТИ) или рукава - предназначаются для транспортировки жидкостей, сыпучей продукции и газообразных сред в промышленности и быту. Применяются шланги для перекачки нефти и нефтепродуктов, подачи пищевых составов на технологическую линию, для откачивания паводковой воды, полива огорода, пр.</p>
-              </div><a class="button button--size-md card-article__button" href="article.html"><span>ПОДРОБНЕЕ</span><svg class="icon" aria-hidden="aria-hidden" role="presentation">
-                  <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
-                </svg></a>
-            </div>
-            <div class="card-article">
-              <div class="card-article__main">
-                <h3 class="card-article__title">Запорная арматура - это важнейший элемент трубопровода</h3>
-                <p class="card-article__text">Неформованные резинотехнические изделия (РТИ) или рукава - предназначаются для транспортировки жидкостей, сыпучей продукции и газообразных сред в промышленности и быту. Применяются шланги для перекачки нефти и нефтепродуктов, подачи пищевых составов на технологическую линию, для откачивания паводковой воды, полива огорода, пр.</p>
-              </div><a class="button button--size-md card-article__button" href="article.html"><span>ПОДРОБНЕЕ</span><svg class="icon" aria-hidden="aria-hidden" role="presentation">
-                  <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
-                </svg></a>
-            </div>
-            <div class="card-article">
-              <div class="card-article__main">
-                <h3 class="card-article__title">Запорная арматура - это важнейший элемент трубопровода</h3>
-                <p class="card-article__text">Неформованные резинотехнические изделия (РТИ) или рукава - предназначаются для транспортировки жидкостей, сыпучей продукции и газообразных сред в промышленности и быту. Применяются шланги для перекачки нефти и нефтепродуктов, подачи пищевых составов на технологическую линию, для откачивания паводковой воды, полива огорода, пр.</p>
-              </div><a class="button button--size-md card-article__button" href="article.html"><span>ПОДРОБНЕЕ</span><svg class="icon" aria-hidden="aria-hidden" role="presentation">
-                  <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
-                </svg></a>
-            </div>
-          </div>
-        </div>
-        <div class="section__footer section__footer--size-rg">
-          <div class="section__actions"><button class="button button--size-md button--theme-secondary section__more" type="button"><span>Показать еще</span></button></div>
-          <div class="pagination section__pagination"><a class="button button--type-icon button--theme-secondary button--size-md pagination__button" href="#"> <svg class="icon" aria-hidden="aria-hidden" role="presentation">
-                <use xlink:href="assets/icons/clean/sprite.svg#arrowhead--left"></use>
-              </svg></a>
-            <ul class="pagination__list">
-              <li class="pagination__item"><a class="pagination__link" href="#"> <span>1</span></a></li>
-              <li class="pagination__item"><a class="pagination__link is-active" href="#"><span>2</span></a></li>
-              <li class="pagination__item">
-                <div class="pagination__link"> <span>...</span></div>
-              </li>
-              <li class="pagination__item"><a class="pagination__link" href="#"> <span>12</span></a></li>
-            </ul><a class="button button--type-icon button--theme-secondary button--size-md pagination__button" href="#"> <svg class="icon" aria-hidden="aria-hidden" role="presentation">
-                <use xlink:href="assets/icons/clean/sprite.svg#arrowhead--right"></use>
-              </svg></a>
           </div>
         </div>
       </div>

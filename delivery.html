@@ -66,7 +66,7 @@
   <link rel="stylesheet" href="css/vendors/fancybox.css">
   <link rel="stylesheet" href="css/index.css">
 </head>
-<title>Информация</title>
+<title>Доставка</title>
 
 <body class="layout">
   <header class="header" data-component="header">
@@ -172,101 +172,163 @@
         <ul class="breadcrumbs__inner" data-component="drag-scroll">
           <ul class="breadcrumbs__list" data-drag-scroll="content">
             <li class="breadcrumbs__item"> <a class="breadcrumbs__link" href="#">Главная</a></li>
-            <li class="breadcrumbs__item"> <a class="breadcrumbs__link" href="#">Информация</a></li>
+            <li class="breadcrumbs__item"> <a class="breadcrumbs__link" href="#">Доставка</a></li>
           </ul>
         </ul>
       </div>
     </div>
-    <section class="section">
+    <section class="section section--hidden">
       <div class="container section__container">
-        <div class="section__header section__header--size-rg">
+        <div class="section__header section__header--size-sm">
           <div class="section__header-content">
-            <h2 class="section__title">Информация</h2>
+            <h1 class="section__title">Условия доставки и оплаты</h1>
           </div>
         </div>
         <div class="section__body">
-          <div class="grid grid--articles">
-            <div class="card-article">
-              <div class="card-article__main">
-                <h3 class="card-article__title">Запорная арматура - это важнейший элемент трубопровода</h3>
-                <p class="card-article__text">Неформованные резинотехнические изделия (РТИ) или рукава - предназначаются для транспортировки жидкостей, сыпучей продукции и газообразных сред в промышленности и быту. Применяются шланги для перекачки нефти и нефтепродуктов, подачи пищевых составов на технологическую линию, для откачивания паводковой воды, полива огорода, пр.</p>
-              </div><a class="button button--size-md card-article__button" href="article.html"><span>ПОДРОБНЕЕ</span><svg class="icon" aria-hidden="aria-hidden" role="presentation">
-                  <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
-                </svg></a>
+          <div class="delivery" data-component="tabs">
+            <div class="delivery__navigation" data-component="drag-scroll">
+              <div class="delivery__navigation-inner" data-drag-scroll="content"><button class="delivery__nav-button" data-tabs="link"><span>СТОИМОСТЬ ДОСТАВКИ</span></button><button class="delivery__nav-button" data-tabs="link"><span>Способы оплаты</span></button><button class="delivery__nav-button" data-tabs="link"><span>ВОЗВРАТ ТОВАРА</span></button></div>
             </div>
-            <div class="card-article">
-              <div class="card-article__main">
-                <h3 class="card-article__title">Запорная арматура - это важнейший элемент трубопровода</h3>
-                <p class="card-article__text">Неформованные резинотехнические изделия (РТИ) или рукава - предназначаются для транспортировки жидкостей, сыпучей продукции и газообразных сред в промышленности и быту. Применяются шланги для перекачки нефти и нефтепродуктов, подачи пищевых составов на технологическую линию, для откачивания паводковой воды, полива огорода, пр.</p>
-              </div><a class="button button--size-md card-article__button" href="article.html"><span>ПОДРОБНЕЕ</span><svg class="icon" aria-hidden="aria-hidden" role="presentation">
-                  <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
-                </svg></a>
+            <div class="delivery__content">
+              <div class="delivery__item" data-tabs="item">
+                <div class="article-content delivery__item-content">
+                  <h2>ПОДЗАГОЛОВОК</h2>
+                  <p>Завершающий этап выполнения обязательств компании ВДВЛ перед своими заказчиками – это доставка трубопроводной и соединительной арматуры, промышленного оборудования, резинотехнических изделий из высококачественных материалов.</p>
+                  <p>Мы строго следим за поставкой товаров, так же, их прибытием в пункт назначения, в точно запланированные сроки, так как знаем, что полная и своевременная доставка позволит обеспечить договорные обязательства перед третьими лицами.</p>
+                  <p>Стоимость перевозки просчитывается индивидуально, с учетом многих факторов: маршрута, погрузочно-разгрузочных работ и для каждого заказа отдельно.</p>
+                  <h2>ПОДЗАГОЛОВОК</h2>
+                  <p>Детальное обсуждение всех условий доставки позволяет сформировать окончательную цену заключаемой сделки, с учетом всех условий. Наша компания может предложить клиенту любой удобный вид доставки или самовывоза. Все это, благодаря, плотному сотрудничеству со многими участниками логистического рынка грузовых и специализированных перевозок.</p>
+                  <p>В случае, осуществления доставки сторонней логистической компанией, мы готовы обеспечить оперативную доставку заказа до склада, выбранного транспортировщика.</p>
+                  <p>Стоимость доставки, возможно, учесть при формировании цены поставляемой трубопроводной и соединительной арматуры, промышленного оборудования, резинотехнических изделий, по желанию клиента.</p>
+                  <p>Если остались вопросы по доставке - обращайтесь к персональным менеджерам, курирующим Ваш заказ - и получите ответы в кратчайшие сроки. Мы приложим все возможные усилия, чтобы наши клиенты получали товары вовремя!</p>
+                </div>
+                <div class="delivery-time delivery__time">
+                  <h2 class="delivery-time__title">Стоимость и сроки доставки крепежа из Санкт-Петербурга в Ваш регион</h2>
+                  <div class="delivery-time__body">
+                    <div class="select delivery-time__select select--style-lg" data-component="select">
+                      <div class="select__title">Город доставки</div>
+                      <div class="select__main" data-select="main">
+                        <div class="select__value" data-select="value"><span class="select__placeholder">Выбрать из списка</span></div><button class="select__trigger" type="button"><svg class="icon" aria-hidden="aria-hidden" role="presentation">
+                            <use xlink:href="assets/icons/clean/sprite.svg#chevron--down"></use>
+                          </svg></button>
+                      </div>
+                      <div class="select-dropdown select__dropdown select-dropdown--style-lg" data-select="dropdown">
+                        <div class="select-dropdown__list" data-select="list"><label class="select-option" data-select="option"><input class="select-option__native" type="radio" name="select" value="select-1" /><span class="select-option__content" data-select="option-content"><span class="select-value"><span>Москва</span></span></span></label><label class="select-option" data-select="option"><input class="select-option__native" type="radio" name="select" value="select-1" /><span class="select-option__content" data-select="option-content"><span class="select-value"><span>Санкт-Петербург</span></span></span></label><label class="select-option" data-select="option"><input class="select-option__native" type="radio" name="select" value="select-1" /><span class="select-option__content" data-select="option-content"><span class="select-value"><span>Екатеринбург</span></span></span></label><label class="select-option" data-select="option"><input class="select-option__native" type="radio" name="select" value="select-1" /><span class="select-option__content" data-select="option-content"><span class="select-value"><span>Нижний новгород</span></span></span></label><label class="select-option" data-select="option"><input class="select-option__native" type="radio" name="select" value="select-1" /><span class="select-option__content" data-select="option-content"><span class="select-value"><span>Барнаул</span></span></span></label></div>
+                      </div>
+                    </div>
+                    <div class="table delivery-time__table">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>
+                              <P></P>
+                            </th>
+                            <th>
+                              <P>Сроки доставки</P>
+                            </th>
+                            <th>
+                              <P>Цена до 1000 кг</P>
+                            </th>
+                            <th>
+                              <P>Цена от 1000 кг</P>
+                            </th>
+                            <th>
+                              <P>Транспортная компания</P>
+                            </th>
+                            <th>
+                              <P>Сроки доставки</P>
+                            </th>
+                            <th>
+                              <P>Цена до 1000 кг</P>
+                            </th>
+                            <th>
+                              <P>Цена от 1000 кг</P>
+                            </th>
+                            <th>
+                              <P>Транспортная компания</P>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <p>Авто</p>
+                            </td>
+                            <td>
+                              <p>9 дней</p>
+                            </td>
+                            <td>
+                              <p>12.7</p>
+                            </td>
+                            <td>
+                              <p>12.7</p>
+                            </td>
+                            <td>
+                              <p>КИТ</p>
+                            </td>
+                            <td>
+                              <p>14 дней</p>
+                            </td>
+                            <td>
+                              <p>5</p>
+                            </td>
+                            <td>
+                              <p>4.95</p>
+                            </td>
+                            <td>
+                              <p>ТЭС</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p>Ж/д</p>
+                            </td>
+                            <td>
+                              <p>14 дней</p>
+                            </td>
+                            <td>
+                              <p>5</p>
+                            </td>
+                            <td>
+                              <p>4.95</p>
+                            </td>
+                            <td>
+                              <p>ТЭС</p>
+                            </td>
+                            <td>
+                              <p>9 дней</p>
+                            </td>
+                            <td>
+                              <p>12.7</p>
+                            </td>
+                            <td>
+                              <p>12.7</p>
+                            </td>
+                            <td>
+                              <p>КИТ</p>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="delivery__item" data-tabs="item">
+                <div class="article-content delivery__item-content">
+                  <h2>ПОДЗАГОЛОВОК</h2>
+                  <p>Услуга оплаты через интернет осуществляется в соответствии с Правилами международных платежных систем Visa, MasterCard и Платежной системы МИР на принципах соблюдения конфиденциальности и безопасности совершения платежа, для чего используются самые современные методы проверки, шифрования и передачи данных по закрытым каналам связи. Ввод данных банковской карты осуществляется на защищенной платежной странице «Тинькофф Банк».</p>
+                  <p>На странице для ввода данных банковской карты потребуется ввести данные банковской карты: номер карты, имя владельца карты, срок действия карты, трёхзначный код безопасности (CVV2 для VISA, CVC2 для MasterCard, Код Дополнительной Идентификации для МИР). Все необходимые данные пропечатаны на самой карте. Трёхзначный код безопасности — это три цифры, находящиеся на обратной стороне карты.</p>
+                  <p>Далее вы будете перенаправлены на страницу Вашего банка для ввода кода безопасности, который придет к Вам в СМС. Если код безопасности к Вам не пришел, то следует обратиться в банк выдавший Вам карту.</p>
+                  <h2>ПОДЗАГОЛОВОК</h2>
+                  <p>Случаи отказа в совершении платежа:</p>
+                  <p>банковская карта не предназначена для совершения платежей через интернет, о чем можно узнать, обратившись в Ваш Банк; недостаточно средств для оплаты на банковской карте. Подробнее о наличии средств на банковской карте Вы можете узнать, <br/> обратившись в банк, выпустивший банковскую карту; <br/> данные банковской карты введены неверно;</p>
+                  <p>истек срок действия банковской карты. Срок действия карты, как правило, указан на лицевой стороне карты (это месяц и год, до которого действительна карта). Подробнее о сроке действия карты Вы можете узнать, обратившись в банк, выпустивший банковскую карту; <br/> По вопросам оплаты с помощью банковской карты и иным вопросам, связанным с работой сайта, Вы можете обращаться по телефону +7 (921) 933-65-00.</p>
+                  <p>Порядок совершения платежа гарантирует конфиденциальность и безопасность Ваших персональных данных. Данные вашей кредитной карты передаются только в зашифрованном виде и не сохраняются на нашем Web сервере, благодаря современным методам их проверки, шифрования и передачи по закрытым каналам связи.</p>
+                </div>
+              </div>
+              <div class="delivery__item" data-tabs="item"></div>
             </div>
-            <div class="card-article">
-              <div class="card-article__main">
-                <h3 class="card-article__title">Запорная арматура - это важнейший элемент трубопровода</h3>
-                <p class="card-article__text">Неформованные резинотехнические изделия (РТИ) или рукава - предназначаются для транспортировки жидкостей, сыпучей продукции и газообразных сред в промышленности и быту. Применяются шланги для перекачки нефти и нефтепродуктов, подачи пищевых составов на технологическую линию, для откачивания паводковой воды, полива огорода, пр.</p>
-              </div><a class="button button--size-md card-article__button" href="article.html"><span>ПОДРОБНЕЕ</span><svg class="icon" aria-hidden="aria-hidden" role="presentation">
-                  <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
-                </svg></a>
-            </div>
-            <div class="card-article">
-              <div class="card-article__main">
-                <h3 class="card-article__title">Запорная арматура - это важнейший элемент трубопровода</h3>
-                <p class="card-article__text">Неформованные резинотехнические изделия (РТИ) или рукава - предназначаются для транспортировки жидкостей, сыпучей продукции и газообразных сред в промышленности и быту. Применяются шланги для перекачки нефти и нефтепродуктов, подачи пищевых составов на технологическую линию, для откачивания паводковой воды, полива огорода, пр.</p>
-              </div><a class="button button--size-md card-article__button" href="article.html"><span>ПОДРОБНЕЕ</span><svg class="icon" aria-hidden="aria-hidden" role="presentation">
-                  <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
-                </svg></a>
-            </div>
-            <div class="card-article">
-              <div class="card-article__main">
-                <h3 class="card-article__title">Запорная арматура - это важнейший элемент трубопровода</h3>
-                <p class="card-article__text">Неформованные резинотехнические изделия (РТИ) или рукава - предназначаются для транспортировки жидкостей, сыпучей продукции и газообразных сред в промышленности и быту. Применяются шланги для перекачки нефти и нефтепродуктов, подачи пищевых составов на технологическую линию, для откачивания паводковой воды, полива огорода, пр.</p>
-              </div><a class="button button--size-md card-article__button" href="article.html"><span>ПОДРОБНЕЕ</span><svg class="icon" aria-hidden="aria-hidden" role="presentation">
-                  <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
-                </svg></a>
-            </div>
-            <div class="card-article">
-              <div class="card-article__main">
-                <h3 class="card-article__title">Запорная арматура - это важнейший элемент трубопровода</h3>
-                <p class="card-article__text">Неформованные резинотехнические изделия (РТИ) или рукава - предназначаются для транспортировки жидкостей, сыпучей продукции и газообразных сред в промышленности и быту. Применяются шланги для перекачки нефти и нефтепродуктов, подачи пищевых составов на технологическую линию, для откачивания паводковой воды, полива огорода, пр.</p>
-              </div><a class="button button--size-md card-article__button" href="article.html"><span>ПОДРОБНЕЕ</span><svg class="icon" aria-hidden="aria-hidden" role="presentation">
-                  <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
-                </svg></a>
-            </div>
-            <div class="card-article">
-              <div class="card-article__main">
-                <h3 class="card-article__title">Запорная арматура - это важнейший элемент трубопровода</h3>
-                <p class="card-article__text">Неформованные резинотехнические изделия (РТИ) или рукава - предназначаются для транспортировки жидкостей, сыпучей продукции и газообразных сред в промышленности и быту. Применяются шланги для перекачки нефти и нефтепродуктов, подачи пищевых составов на технологическую линию, для откачивания паводковой воды, полива огорода, пр.</p>
-              </div><a class="button button--size-md card-article__button" href="article.html"><span>ПОДРОБНЕЕ</span><svg class="icon" aria-hidden="aria-hidden" role="presentation">
-                  <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
-                </svg></a>
-            </div>
-            <div class="card-article">
-              <div class="card-article__main">
-                <h3 class="card-article__title">Запорная арматура - это важнейший элемент трубопровода</h3>
-                <p class="card-article__text">Неформованные резинотехнические изделия (РТИ) или рукава - предназначаются для транспортировки жидкостей, сыпучей продукции и газообразных сред в промышленности и быту. Применяются шланги для перекачки нефти и нефтепродуктов, подачи пищевых составов на технологическую линию, для откачивания паводковой воды, полива огорода, пр.</p>
-              </div><a class="button button--size-md card-article__button" href="article.html"><span>ПОДРОБНЕЕ</span><svg class="icon" aria-hidden="aria-hidden" role="presentation">
-                  <use xlink:href="assets/icons/clean/sprite.svg#arrow--right"></use>
-                </svg></a>
-            </div>
-          </div>
-        </div>
-        <div class="section__footer section__footer--size-rg">
-          <div class="section__actions"><button class="button button--size-md button--theme-secondary section__more" type="button"><span>Показать еще</span></button></div>
-          <div class="pagination section__pagination"><a class="button button--type-icon button--theme-secondary button--size-md pagination__button" href="#"> <svg class="icon" aria-hidden="aria-hidden" role="presentation">
-                <use xlink:href="assets/icons/clean/sprite.svg#arrowhead--left"></use>
-              </svg></a>
-            <ul class="pagination__list">
-              <li class="pagination__item"><a class="pagination__link" href="#"> <span>1</span></a></li>
-              <li class="pagination__item"><a class="pagination__link is-active" href="#"><span>2</span></a></li>
-              <li class="pagination__item">
-                <div class="pagination__link"> <span>...</span></div>
-              </li>
-              <li class="pagination__item"><a class="pagination__link" href="#"> <span>12</span></a></li>
-            </ul><a class="button button--type-icon button--theme-secondary button--size-md pagination__button" href="#"> <svg class="icon" aria-hidden="aria-hidden" role="presentation">
-                <use xlink:href="assets/icons/clean/sprite.svg#arrowhead--right"></use>
-              </svg></a>
           </div>
         </div>
       </div>
