@@ -1385,19 +1385,13 @@ var getConfig = function getConfig(slider, id, sliders) {
         autoHeight: true,
         watchSlidesProgress: true,
         loop: true,
-        slidesPerView: 1,
+        slidesPerView: 2,
         navigation: {
           nextEl: (_slider$querySelector = slider.querySelector('[data-slider-button="next"]')) !== null && _slider$querySelector !== void 0 ? _slider$querySelector : document.querySelector('[data-slider-navigation-id="partners"] [data-slider-button="next"]'),
           prevEl: (_slider$querySelector2 = slider.querySelector('[data-slider-button="prev"]')) !== null && _slider$querySelector2 !== void 0 ? _slider$querySelector2 : document.querySelector('[data-slider-navigation-id="partners"] [data-slider-button="prev"]')
         },
         breakpoints: {
           768: {
-            slidesPerView: 3
-          },
-          1024: {
-            slidesPerView: 2
-          },
-          1260: {
             slidesPerView: 3
           }
         }
@@ -1408,7 +1402,7 @@ var getConfig = function getConfig(slider, id, sliders) {
       config: {
         spaceBetween: 24,
         speed: transition * 3,
-        autoHeight: true,
+        autoHeight: false,
         watchSlidesProgress: true,
         loop: false,
         slidesPerView: 'auto',
@@ -1553,44 +1547,7 @@ var getConfig = function getConfig(slider, id, sliders) {
         }
       }
     }
-
-    // old
-
-    // article: {
-    //   id: 'article',
-    //   config: {
-    //     modules: [Navigation, Pagination], 
-    //     spaceBetween: 16,
-    //     speed: transition * 3,
-    //     slidesPerView: 1,
-    //     autoHeight: true, 
-    //     navigation: {
-    //       nextEl: slider.querySelector('[data-slider-button="next"]'),
-    //       prevEl: slider.querySelector('[data-slider-button="prev"]'),
-    //     },
-    //     pagination: {
-    //       el: slider.querySelector('[data-slider="pagination"]'),
-    //       clickable: true,
-    //       bulletClass: 'slider__pagination-item',
-    //     },
-    //   },
-    // },
-    // 'analytics-aside': {
-    //   id: 'analytics-aside',
-    //   config: {
-    //     modules: [Navigation, ], 
-    //     spaceBetween: 12,
-    //     speed: transition * 3,
-    //     slidesPerView: 'auto',
-    //     breakpoints: {
-    //       833: {
-    //         init: false,
-    //       },
-    //     }
-    //   },
-    // },
   };
-
   var currentConfig = configs[id] ? configs[id] : configs["default"];
   return currentConfig;
 };
