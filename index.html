@@ -1,99 +1,119 @@
-<!DOCTYPE html><html lang="ru"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><style type="text/css">* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  transition: 0.2s;
+<!DOCTYPE html>
+<html lang="ru">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css">
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.2s;
 
-  &::-webkit-scrollbar {
-    width: 8px;
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: #000;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #fff;
+    }
   }
 
-  &::-webkit-scrollbar-track {
+  html {
     background-color: #000;
+    color: #fff;
+    font-size: 18px;
+    font-family: monospace;
   }
 
-  &::-webkit-scrollbar-thumb {
-    background-color: #fff;
-  }    
-}
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    min-height: 100vh;
+  }
 
-html {
-  background-color: #000;
-  color: #fff;
-  font-size: 18px;
-  font-family: monospace;
-}
+  h1 {
+    font-size: 24px;
+    text-transform: uppercase;
+  }
 
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 12px;
-  min-height: 100vh;
-}
+  a {
+    color: inherit;
+  }
 
-h1 {
-  font-size: 24px;
-  text-transform: uppercase;
-}
+  a:hover,
+  a:active {
+    opacity: 0.6;
+  }
 
-a {
-  color: inherit;
-}
+  .grid {
+    display: flex;
+    gap: 32px;
+  }
 
-a:hover,
-a:active {
-  opacity: 0.6;
-}
+  .grid__col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 0 1 50%;
+  }
 
-.grid {
-  display: flex;
-  gap: 32px;
-}
+  .grid__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+  }
 
-.grid__col {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  flex: 0 1 50%;
-}
+  .header,
+  .footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px;
+  }
 
-.grid__list {
-  display: flex;
-  flex-direction: column;
-  row-gap: 8px;
-}
+  .logo {
+    max-width: 48px;
+    max-height: 48px;
+    object-fit: contain;
+    object-position: center;
+  }
 
-.header,
-.footer {
-  display: flex;
-  justify-content: flex-end;
-  padding: 16px;
-}
+  .main {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px;
+    width: 100%;
+    max-width: 1280px;
+    margin-right: auto;
+    margin-left: auto;
+  }
 
-.logo {
-  max-width: 48px;
-  max-height: 48px;
-  object-fit: contain;
-  object-position: center;
-}
+  h1 {
+    margin-bottom: 24px;
+  }
 
-.main {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 16px;
-  width: 100%;
-  max-width: 1280px;
-  margin-right: auto;
-  margin-left: auto;
-}
+  .footer {
+    margin-top: auto;
+  }
+</style>
+<title>Карта проекта</title>
 
-h1 {
-  margin-bottom: 24px;
-}
+<body class="layout">
+  <div class="main">
+    <h1>Карта проекта</h1>
+    <div class="grid">
+      <div class="grid__col">
+        <div class="grid__list"><a href="ui-kit.html">UI-KIT</a><a href="main.html">Главная</a><a href="product.html">Товар</a><a href="about.html">О компании</a><a href="delivery.html">Доставка</a><a href="contacts.html">Контакты</a><a href="fast-order.html">Быстрый расчет сметы</a><br><a href="search.html">Поиск</a><a href="search-empty.html">Поиск. Пусто</a><br><a href="catalog.html">Каталог</a><a href="catalog-category.html">Каталог. Раздел</a><a href="catalog-subcategory.html">Каталог. Подраздел</a><br><a href="cart.html">Корзина</a><a href="cart-empty.html">Корзина. Пусто</a><br><a href="blog.html">Блог</a><a href="article.html">Блог. Статья</a><br><a href="order.html">Оформление заказа</a><a href="order-success.html">Оформление заказа. Успех</a><br><a href="404.html">404</a></div>
+      </div>
+    </div>
+  </div>
+</body>
 
-.footer {
-  margin-top: auto;
-}
-</style><title>Карта проекта</title><body class="layout"><div class="main"><h1>Карта проекта</h1><div class="grid"> <div class="grid__col"><div class="grid__list"><a href="ui-kit.html">UI-KIT</a><a href="main.html">Главная</a><a href="product.html">Товар</a><a href="about.html">О компании</a><a href="delivery.html">Доставка</a><a href="contacts.html">Контакты</a><a href="fast-order.html">Быстрый расчет сметы</a><br><a href="search.html">Поиск</a><a href="search-empty.html">Поиск. Пусто</a><br><a href="catalog.html">Каталог</a><a href="catalog-category.html">Каталог. Раздел</a><a href="catalog-subcategory.html">Каталог. Подраздел</a><br><a href="cart.html">Корзина</a><a href="cart-empty.html">Корзина. Пусто</a><br><a href="blog.html">Блог</a><a href="article.html">Блог. Статья</a><br><a href="order.html">Оформление заказа</a><a href="order-success.html">Оформление заказа. Успех</a><br><a href="404.html">404</a></div></div></div></div></body></html>
+</html>
