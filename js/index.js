@@ -1494,7 +1494,11 @@ var getConfig = function getConfig(slider, id, sliders) {
         autoHeight: true,
         speed: transition,
         direction: 'vertical',
-        watchSlidesProgress: true
+        watchSlidesProgress: true,
+        navigation: {
+          nextEl: slider.querySelector('[data-slider-button="next"]'),
+          prevEl: slider.querySelector('[data-slider-button="prev"]')
+        }
       }
     },
     product: {
