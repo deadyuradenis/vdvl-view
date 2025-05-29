@@ -2260,6 +2260,7 @@ p {
 }
 .slider__inner {
   overflow: hidden;
+  min-width: 100%;
 }
 .slider__slide, .slider__wrapper {
   width: auto;
