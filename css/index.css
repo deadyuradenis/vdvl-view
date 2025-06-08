@@ -2296,7 +2296,7 @@ p {
   justify-content: center;
   box-sizing: border-box;
   border-radius: 50%;
-  background-color: hsla(var(--color-primary-900--hsl), 0.2);
+  background-color: hsl(212, 17%, 83%);
   color: var(--color-primary-900);
   transition: background-color 0.3s ease, color 0.3s ease, opacity 0.3s ease;
 }
@@ -2377,6 +2377,11 @@ p {
 }
 .slider--comments .slider__slide {
   opacity: 1;
+}
+@media only screen and (max-width: 423px) {
+  .slider--comments .slider__slide {
+    max-width: 100%;
+  }
 }
 @media only screen and (max-width: 767px) {
   .slider--comments .card-comment {
@@ -5444,7 +5449,7 @@ body {
 @media only screen and (max-width: 767px) {
   .banner-product__content {
     max-width: none;
-    padding: 90px 15px 200px;
+    padding: 90px 15px 220px;
   }
 }
 .banner-product__title {
