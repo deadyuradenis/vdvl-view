@@ -5170,6 +5170,7 @@ body {
   font-size: 20px;
   font-weight: 600;
   line-height: 36px;
+  flex-shrink: 0;
 }
 @media only screen and (max-width: 767px) {
   .card-product-catalog__price {
@@ -6887,9 +6888,6 @@ body {
 .delivery-form__form {
   --grid-gap: 20px;
 }
-.delivery-form__form .grid-form__col {
-  justify-content: flex-end;
-}
 .delivery-form__form .grid-form__col--custom {
   max-width: calc(33.33% - var(--grid-gap) * 2 / 3);
 }
@@ -6901,6 +6899,14 @@ body {
 @media only screen and (max-width: 1023px) {
   .delivery-form__form .grid-form__col--custom {
     max-width: none;
+  }
+}
+.delivery-form__form .grid-form__button {
+  min-height: 60px;
+}
+@media only screen and (min-width: 1024px) {
+  .delivery-form__form .grid-form__button {
+    margin-top: 32px;
   }
 }
 .delivery-form.is-success .delivery-form__success {
